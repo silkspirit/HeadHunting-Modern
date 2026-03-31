@@ -330,7 +330,7 @@ public class HeadHunting extends JavaPlugin {
         getServer().getScheduler().runTaskTimer(this, () -> {
             for (org.bukkit.entity.Player player : getServer().getOnlinePlayers()) {
                 // Refresh passive abilities
-                maskManager.applyPassiveAbilities(player);
+                maskManager.checkAndUpdateAbilities(player);
                 
                 // Check farming haste
                 abilityHandler.checkFarmingHaste(player);

@@ -194,17 +194,32 @@ public class MaskManager {
         if (heldMask != null && !heldMask.equals(equippedMask)) {
             MaskConfig heldConfig = plugin.getConfigManager().getMaskConfig(heldMask);
             if (heldConfig != null) {
-                // Check if player owns this mask and get their level for it
                 int heldLevel = data.getMaskLevel(heldMask);
                 if (heldLevel < 1) {
-                    // If they don't own it in data, check the item itself
                     ItemStack heldItem = player.getInventory().getItemInHand();
                     heldLevel = plugin.getMaskFactory().getMaskLevel(heldItem);
                 }
                 if (heldLevel < 1) heldLevel = 1;
-                
+
                 collectAbilities(heldConfig, heldLevel, highestAmplifiers);
                 totalHealthBoost += collectHealthBoost(heldConfig, heldLevel);
+            }
+        }
+
+        // 3. Apply abilities from OFF-HAND mask
+        String offHandMask = getHeldMaskFromOffHand(player);
+        if (offHandMask != null && !offHandMask.equals(equippedMask) && !offHandMask.equals(heldMask)) {
+            MaskConfig offHandConfig = plugin.getConfigManager().getMaskConfig(offHandMask);
+            if (offHandConfig != null) {
+                int offHandLevel = data.getMaskLevel(offHandMask);
+                if (offHandLevel < 1) {
+                    ItemStack offHandItem = player.getInventory().getItemInOffHand();
+                    offHandLevel = plugin.getMaskFactory().getMaskLevel(offHandItem);
+                }
+                if (offHandLevel < 1) offHandLevel = 1;
+
+                collectAbilities(offHandConfig, offHandLevel, highestAmplifiers);
+                totalHealthBoost += collectHealthBoost(offHandConfig, offHandLevel);
             }
         }
         
@@ -262,6 +277,43 @@ public class MaskManager {
         ItemStack heldItem = player.getInventory().getItemInHand();
         if (heldItem == null) return null;
         return plugin.getMaskFactory().getMaskId(heldItem);
+    }
+
+    /**
+     * Get mask from player's off hand
+     */
+    public String getHeldMaskFromOffHand(Player player) {
+        ItemStack offHandItem = player.getInventory().getItemInOffHand();
+        if (offHandItem == null) return null;
+        return plugin.getMaskFactory().getMaskId(offHandItem);
+    }
+
+    /**
+     * Check if player still has a mask equipped or held, and update abilities accordingly.
+     * Called by the periodic task to ensure effects are removed when masks are gone.
+     */
+    public void checkAndUpdateAbilities(Player player) {
+        String helmetMask = getEquippedMaskFromHelmet(player);
+        String mainHandMask = getHeldMaskFromHand(player);
+        String offHandMask = getHeldMaskFromOffHand(player);
+
+        if (helmetMask == null && mainHandMask == null && offHandMask == null) {
+            // No mask anywhere — clean up
+            PlayerData data = plugin.getDataManager().getPlayerData(player);
+            if (data.getEquippedMask() != null) {
+                data.setEquippedMask(null);
+            }
+            removePassiveAbilities(player);
+        } else {
+            // Has at least one mask — sync equipped state and apply
+            PlayerData data = plugin.getDataManager().getPlayerData(player);
+            if (helmetMask != null && !helmetMask.equals(data.getEquippedMask())) {
+                data.setEquippedMask(helmetMask);
+            } else if (helmetMask == null && data.getEquippedMask() != null) {
+                data.setEquippedMask(null);
+            }
+            applyPassiveAbilities(player);
+        }
     }
     
     /**
