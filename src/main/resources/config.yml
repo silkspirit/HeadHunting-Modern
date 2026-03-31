@@ -1,0 +1,161 @@
+#  _   _                _ _   _             _   _             
+# | | | | ___  __ _  __| | | | |_   _ _ __ | |_(_)_ __   __ _ 
+# | |_| |/ _ \/ _` |/ _` | |_| | | | | '_ \| __| | '_ \ / _` |
+# |  _  |  __/ (_| | (_| |  _  | |_| | | | | |_| | | | | (_| |
+# |_| |_|\___|\__,_|\__,_|_| |_|\__,_|_| |_|\__|_|_| |_|\__, |
+#                                                       |___/ 
+# Configuration File
+# Version 1.0.0
+
+# General Settings
+general:
+  # Enable debug messages in console
+  debug: false
+  
+  # Data storage type: YAML or SQLITE
+  storage-type: SQLITE
+  
+  # Auto-save interval in minutes (0 to disable)
+  auto-save-interval: 5
+
+# Head Drop Settings
+head-drops:
+  # Global drop rate multiplier (1.0 = normal, 2.0 = double, etc.)
+  drop-rate-multiplier: 1.0
+  
+  # Should heads drop in all worlds or only specific ones?
+  world-whitelist:
+    enabled: true
+    worlds:
+      - world
+      - world_nether
+  
+  # Should stacked mobs drop multiple heads?
+  stacked-mobs:
+    enabled: true
+    # Maximum heads per stacked mob kill
+    max-heads-per-kill: 64
+
+# Level System Settings
+levels:
+  # Grant permissions through LuckPerms (recommended) or Bukkit
+  permission-system: LUCKPERMS
+  
+  # Broadcast level-ups to server?
+  broadcast-levelup: true
+  broadcast-message: "&b&l[HeadHunting] &f{player} &7has reached &9Level {level}&7!"
+  
+  # Rankup rewards - given on level up
+  # Supports commands with {player} placeholder
+  rankup-commands:
+    5:
+      - "give {player} diamond 5"
+    10:
+      - "give {player} diamond 10"
+      - "broadcast &9{player} &bhas reached Level 10!"
+    14:
+      - "give {player} diamond 20"
+      - "broadcast &9&l{player} &b&lhas reached MAX LEVEL!"
+
+# Mask Settings
+masks:
+  # Allow masks to be traded between players?
+  tradeable: true
+  
+  # Drop masks on death?
+  drop-on-death: true
+  
+  # Masks lose levels on death? (false = keep level, true = reset to 1)
+  reset-level-on-death: false
+
+# Ability Balance Settings (Global modifiers)
+# These multiply/modify ALL abilities without editing masks.yml
+ability-balance:
+  # Global chance multiplier (1.0 = normal, 0.5 = halved, 2.0 = doubled)
+  chance-multiplier: 1.0
+  
+  # Global potion amplifier offset (0 = normal, -1 = one level weaker, +1 = one level stronger)
+  amplifier-offset: 0
+  
+  # Maximum allowed amplifier (cap high-level effects)
+  # Set to -1 for no cap
+  max-amplifier: -1
+  
+  # Global potion duration multiplier (1.0 = normal)
+  duration-multiplier: 1.0
+  
+  # Global damage multiplier for ON_HIT abilities
+  damage-multiplier: 1.0
+  
+  # Global value multiplier (affects XP bonuses, drop rates, etc.)
+  value-multiplier: 1.0
+  
+  # Per-effect-type overrides (optional, leave empty to use global)
+  # Example: speed-max-amplifier: 1  (cap speed at Speed II)
+  overrides:
+    # speed-max-amplifier: 4
+    # speed-chance-multiplier: 1.0
+    # strength-max-amplifier: 1
+
+# Spirit Essence Settings
+spirit-essence:
+  # How much mask XP does one essence give?
+  xp-per-essence: 100
+  
+  # Or set to -1 to make it instant level-up
+  # xp-per-essence: -1
+
+# Economy Settings
+economy:
+  # Currency symbol for displays
+  currency-symbol: "$"
+  
+  # Enable head selling via shift-right-click?
+  shift-click-sell: true
+
+# Integration Settings
+integrations:
+  # PlaceholderAPI
+  placeholderapi:
+    enabled: true
+  
+  # FactionsKore/FactionsUUID - for warzone detection
+  factions:
+    enabled: true
+    # Bonus head drop rate in warzone (multiplier)
+    warzone-drop-multiplier: 1.5
+    # Darkzone world name (FKore custom world - suppress vanilla mob drops here)
+    darkzone-world: "darkzone"
+    # Suppress vanilla drops (rotten flesh, bones, etc.) for custom-named mobs in darkzone-world
+    suppress-vanilla-drops: true
+  
+  # LuckPerms - for permission management
+  luckperms:
+    enabled: true
+
+# Messages - customize all plugin messages
+# Supports color codes with & and hex colors with &#RRGGBB
+messages:
+  prefix: "&8[&bHeadHunting&8] "
+  
+  # Level messages
+  level-up: "&b&lLEVEL UP! &7You are now &9Level {level}&7!"
+  level-info: "&7Your Level: &9{level} &8| &7XP: &b{xp}&7/&b{xp_needed}"
+  level-max: "&7You have reached &9&lMAX LEVEL&7!"
+  
+  # Head messages
+  head-consumed: "&7+&b{xp} XP &7from &f{head_type} Head"
+  head-sold: "&7Sold &f{amount}x {head_type} Head &7for &a{price}"
+  
+  # Mask messages
+  mask-equipped: "&7Equipped &b{mask_name}"
+  mask-unequipped: "&7Unequipped mask"
+  mask-leveled: "&b&lMASK UPGRADED! &7{mask_name} is now &9Level {level}&7!"
+  mask-crafted: "&b&lMASK CRAFTED! &7You crafted &9{mask_name}&7!"
+  gapple-returned: "&a&lYour golden apple was returned!"
+
+  # Error messages
+  no-permission: "&cYou don't have permission to do that!"
+  player-not-found: "&cPlayer not found!"
+  invalid-amount: "&cInvalid amount!"
+  inventory-full: "&cYour inventory is full!"

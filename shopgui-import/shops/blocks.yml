@@ -1,0 +1,515 @@
+# ============================================
+# BLOCKS SHOP - Building Materials
+# Organized by type, multiple stack sizes
+# ============================================
+blocks:
+  name: "&9&lBlocks (page %page%)"
+  fillItem:
+    material: STAINED_GLASS_PANE
+    damage: 15
+    name: " "
+  items:
+    # ============ PAGE 1 - Stone & Cobble ============
+    1:
+      type: item
+      item:
+        material: COBBLESTONE
+        quantity: 64
+      buyPrice: 32
+      sellPrice: 4
+      slot: 10
+    2:
+      type: item
+      item:
+        material: COBBLESTONE
+        quantity: 32
+      buyPrice: 16
+      sellPrice: 2
+      slot: 11
+    3:
+      type: item
+      item:
+        material: STONE
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 12
+    4:
+      type: item
+      item:
+        material: STONE
+        quantity: 32
+      buyPrice: 32
+      sellPrice: 4
+      slot: 13
+    5:
+      type: item
+      item:
+        material: SMOOTH_BRICK
+        quantity: 64
+      buyPrice: 80
+      sellPrice: 10
+      slot: 14
+    6:
+      type: item
+      item:
+        material: SMOOTH_BRICK
+        quantity: 32
+      buyPrice: 40
+      sellPrice: 5
+      slot: 15
+    7:
+      type: item
+      item:
+        material: MOSSY_COBBLESTONE
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 16
+
+    # Row 2 - Stone variants
+    8:
+      type: item
+      item:
+        material: STONE
+        quantity: 64
+        damage: 1
+      buyPrice: 64
+      sellPrice: 8
+      slot: 19
+    9:
+      type: item
+      item:
+        material: STONE
+        quantity: 64
+        damage: 3
+      buyPrice: 64
+      sellPrice: 8
+      slot: 20
+    10:
+      type: item
+      item:
+        material: STONE
+        quantity: 64
+        damage: 5
+      buyPrice: 64
+      sellPrice: 8
+      slot: 21
+    11:
+      type: item
+      item:
+        material: BRICK
+        quantity: 64
+      buyPrice: 80
+      sellPrice: 10
+      slot: 22
+    12:
+      type: item
+      item:
+        material: NETHER_BRICK
+        quantity: 64
+      buyPrice: 80
+      sellPrice: 10
+      slot: 23
+    13:
+      type: item
+      item:
+        material: QUARTZ_BLOCK
+        quantity: 64
+      buyPrice: 160
+      sellPrice: 20
+      slot: 24
+    14:
+      type: item
+      item:
+        material: QUARTZ_BLOCK
+        quantity: 32
+      buyPrice: 80
+      sellPrice: 10
+      slot: 25
+
+    # Row 3 - Dirt & Grass
+    15:
+      type: item
+      item:
+        material: DIRT
+        quantity: 64
+      buyPrice: 32
+      sellPrice: 4
+      slot: 28
+    16:
+      type: item
+      item:
+        material: GRASS
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 29
+    17:
+      type: item
+      item:
+        material: GRAVEL
+        quantity: 64
+      buyPrice: 48
+      sellPrice: 6
+      slot: 30
+    18:
+      type: item
+      item:
+        material: CLAY
+        quantity: 64
+      buyPrice: 80
+      sellPrice: 10
+      slot: 31
+    19:
+      type: item
+      item:
+        material: HARD_CLAY
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 32
+    20:
+      type: item
+      item:
+        material: NETHERRACK
+        quantity: 64
+      buyPrice: 32
+      sellPrice: 4
+      slot: 33
+    21:
+      type: item
+      item:
+        material: SOUL_SAND
+        quantity: 64
+      buyPrice: 48
+      sellPrice: 6
+      slot: 34
+
+    # Row 4 - End & Special
+    22:
+      type: item
+      item:
+        material: ENDER_STONE
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 37
+    23:
+      type: item
+      item:
+        material: OBSIDIAN
+        quantity: 64
+      buyPrice: 384
+      sellPrice: 48
+      slot: 38
+    24:
+      type: item
+      item:
+        material: OBSIDIAN
+        quantity: 32
+      buyPrice: 192
+      sellPrice: 24
+      slot: 39
+    25:
+      type: item
+      item:
+        material: GLOWSTONE
+        quantity: 64
+      buyPrice: 128
+      sellPrice: 16
+      slot: 40
+    26:
+      type: item
+      item:
+        material: SEA_LANTERN
+        quantity: 32
+      buyPrice: 160
+      sellPrice: 20
+      slot: 41
+    27:
+      type: item
+      item:
+        material: PRISMARINE
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 42
+    28:
+      type: item
+      item:
+        material: SPONGE
+        quantity: 16
+      buyPrice: 160
+      sellPrice: 20
+      slot: 43
+
+    # ============ PAGE 2 - Wood ============
+    29:
+      type: item
+      item:
+        material: LOG
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 10
+      page: 2
+    30:
+      type: item
+      item:
+        material: LOG
+        quantity: 64
+        damage: 1
+      buyPrice: 96
+      sellPrice: 12
+      slot: 11
+      page: 2
+    31:
+      type: item
+      item:
+        material: LOG
+        quantity: 64
+        damage: 2
+      buyPrice: 96
+      sellPrice: 12
+      slot: 12
+      page: 2
+    32:
+      type: item
+      item:
+        material: LOG
+        quantity: 64
+        damage: 3
+      buyPrice: 96
+      sellPrice: 12
+      slot: 13
+      page: 2
+    33:
+      type: item
+      item:
+        material: LOG_2
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 14
+      page: 2
+    34:
+      type: item
+      item:
+        material: LOG_2
+        quantity: 64
+        damage: 1
+      buyPrice: 96
+      sellPrice: 12
+      slot: 15
+      page: 2
+    35:
+      type: item
+      item:
+        material: BOOKSHELF
+        quantity: 16
+      buyPrice: 80
+      sellPrice: 10
+      slot: 16
+      page: 2
+
+    # Row 2 - Planks
+    36:
+      type: item
+      item:
+        material: WOOD
+        quantity: 64
+      buyPrice: 48
+      sellPrice: 6
+      slot: 19
+      page: 2
+    37:
+      type: item
+      item:
+        material: WOOD
+        quantity: 64
+        damage: 1
+      buyPrice: 48
+      sellPrice: 6
+      slot: 20
+      page: 2
+    38:
+      type: item
+      item:
+        material: WOOD
+        quantity: 64
+        damage: 2
+      buyPrice: 48
+      sellPrice: 6
+      slot: 21
+      page: 2
+    39:
+      type: item
+      item:
+        material: WOOD
+        quantity: 64
+        damage: 3
+      buyPrice: 48
+      sellPrice: 6
+      slot: 22
+      page: 2
+    40:
+      type: item
+      item:
+        material: WOOD
+        quantity: 64
+        damage: 4
+      buyPrice: 48
+      sellPrice: 6
+      slot: 23
+      page: 2
+    41:
+      type: item
+      item:
+        material: WOOD
+        quantity: 64
+        damage: 5
+      buyPrice: 48
+      sellPrice: 6
+      slot: 24
+      page: 2
+    42:
+      type: item
+      item:
+        material: HAY_BLOCK
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 25
+      page: 2
+
+    # Row 3 - Sand & Sandstone
+    43:
+      type: item
+      item:
+        material: SAND
+        quantity: 64
+      buyPrice: 48
+      sellPrice: 6
+      slot: 28
+      page: 2
+    44:
+      type: item
+      item:
+        material: SAND
+        quantity: 64
+        damage: 1
+      buyPrice: 48
+      sellPrice: 6
+      slot: 29
+      page: 2
+    45:
+      type: item
+      item:
+        material: SANDSTONE
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 30
+      page: 2
+    46:
+      type: item
+      item:
+        material: RED_SANDSTONE
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 31
+      page: 2
+    47:
+      type: item
+      item:
+        material: GLASS
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 32
+      page: 2
+    48:
+      type: item
+      item:
+        material: GLASS
+        quantity: 32
+      buyPrice: 32
+      sellPrice: 4
+      slot: 33
+      page: 2
+    49:
+      type: item
+      item:
+        material: STAINED_GLASS
+        quantity: 64
+      buyPrice: 80
+      sellPrice: 10
+      slot: 34
+      page: 2
+
+    # Row 4 - Ice & Snow
+    50:
+      type: item
+      item:
+        material: SNOW_BLOCK
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 37
+      page: 2
+    51:
+      type: item
+      item:
+        material: ICE
+        quantity: 64
+      buyPrice: 80
+      sellPrice: 10
+      slot: 38
+      page: 2
+    52:
+      type: item
+      item:
+        material: PACKED_ICE
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 39
+      page: 2
+    53:
+      type: item
+      item:
+        material: WOOL
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 40
+      page: 2
+    54:
+      type: item
+      item:
+        material: CARPET
+        quantity: 64
+      buyPrice: 48
+      sellPrice: 6
+      slot: 41
+      page: 2
+    55:
+      type: item
+      item:
+        material: COAL_BLOCK
+        quantity: 64
+      buyPrice: 128
+      sellPrice: 16
+      slot: 42
+      page: 2
+    56:
+      type: item
+      item:
+        material: ENCHANTMENT_TABLE
+        quantity: 1
+      buyPrice: 2500
+      sellPrice: 250
+      slot: 43
+      page: 2

@@ -1,0 +1,162 @@
+# ============================================================
+# Spawner Shop Configuration
+# ============================================================
+# Each entry in 'spawners' defines one spawner available
+# for purchase in the /spawnershop GUI.
+#
+# Fields:
+#   mob-type      - EntityType name (must match spawner-stacking)
+#   display-name  - Name shown on the GUI item
+#   price         - Cost in economy currency
+#   required-level - HeadHunting level required to purchase
+#   slot          - GUI slot (0-53). Use -1 to auto-assign.
+# ============================================================
+
+gui-title: "&5&l✦ Spawner Shop ✦"
+gui-size: 54
+
+# Transaction lock duration after purchase (in ticks, 20 ticks = 1 second).
+# Default is 1 tick (~50 ms) — just enough to prevent double-click duplication.
+# The GUI closes on purchase, so the player can't click again mid-transaction.
+purchase-cooldown-ticks: 1
+
+spawners:
+  pig:
+    mob-type: PIG
+    display-name: "&fPig Spawner"
+    price: 50000.0
+    required-level: 1
+    slot: 10
+
+  sheep:
+    mob-type: SHEEP
+    display-name: "&fSheep Spawner"
+    price: 75000.0
+    required-level: 2
+    slot: 11
+
+  chicken:
+    mob-type: CHICKEN
+    display-name: "&fChicken Spawner"
+    price: 75000.0
+    required-level: 3
+    slot: 12
+
+  squid:
+    mob-type: SQUID
+    display-name: "&fSquid Spawner"
+    price: 100000.0
+    required-level: 3
+    slot: 13
+
+  zombie:
+    mob-type: ZOMBIE
+    display-name: "&fZombie Spawner"
+    price: 150000.0
+    required-level: 4
+    slot: 14
+
+  creeper:
+    mob-type: CREEPER
+    display-name: "&fCreeper Spawner"
+    price: 500000.0
+    required-level: 5
+    slot: 15
+
+  cow:
+    mob-type: COW
+    display-name: "&fCow Spawner"
+    price: 200000.0
+    required-level: 6
+    slot: 16
+
+  wolf:
+    mob-type: WOLF
+    display-name: "&fWolf Spawner"
+    price: 150000.0
+    required-level: 6
+    slot: 19
+
+  spider:
+    mob-type: SPIDER
+    display-name: "&fSpider Spawner"
+    price: 350000.0
+    required-level: 7
+    slot: 20
+
+  skeleton:
+    mob-type: SKELETON
+    display-name: "&fSkeleton Spawner"
+    price: 500000.0
+    required-level: 8
+    slot: 21
+
+  magma_cube:
+    mob-type: MAGMA_CUBE
+    display-name: "&fMagma Cube Spawner"
+    price: 750000.0
+    required-level: 8
+    slot: 22
+
+  cave_spider:
+    mob-type: CAVE_SPIDER
+    display-name: "&fCave Spider Spawner"
+    price: 750000.0
+    required-level: 9
+    slot: 23
+
+  mushroom_cow:
+    mob-type: MUSHROOM_COW
+    display-name: "&fMushroom Cow Spawner"
+    price: 1000000.0
+    required-level: 9
+    slot: 24
+
+  blaze:
+    mob-type: BLAZE
+    display-name: "&fBlaze Spawner"
+    price: 1500000.0
+    required-level: 10
+    slot: 25
+
+  guardian:
+    mob-type: GUARDIAN
+    display-name: "&fGuardian Spawner"
+    price: 2000000.0
+    required-level: 10
+    slot: 28
+
+  enderman:
+    mob-type: ENDERMAN
+    display-name: "&fEnderman Spawner"
+    price: 2500000.0
+    required-level: 11
+    slot: 29
+
+  ghast:
+    mob-type: GHAST
+    display-name: "&fGhast Spawner"
+    price: 3000000.0
+    required-level: 11
+    slot: 30
+
+  iron_golem:
+    mob-type: IRON_GOLEM
+    display-name: "&fIron Golem Spawner"
+    price: 5000000.0
+    required-level: 12
+    slot: 31
+
+  villager:
+    mob-type: VILLAGER
+    display-name: "&fVillager Spawner"
+    price: 3000000.0
+    required-level: 13
+    slot: 32
+
+  witch:
+    mob-type: WITCH
+    display-name: "&fWitch Spawner"
+    price: 4000000.0
+    required-level: 14
+    slot: 33

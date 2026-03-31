@@ -1,0 +1,292 @@
+# ============================================
+# HeadHunting - Daily Missions Configuration
+# ============================================
+# Daily missions refresh every day at midnight!
+# Challenging but completable in 1-2 hours of grinding.
+
+settings:
+  # How many random missions are active each day
+  missions-per-day: 4
+  
+  # Timezone for daily reset (default: UTC)
+  timezone: "UTC"
+
+# ============================================
+# MISSION TYPES
+# ============================================
+# KILL_MOBS           - Kill any mobs
+# KILL_SPECIFIC_MOB   - Kill specific mob (set target: MOB_TYPE)
+# KILL_PLAYERS        - Kill players in PvP
+# KILL_ARMORED_PLAYERS - Kill players wearing armor
+# DEPOSIT_HEADS       - Deposit heads into cauldron
+# CONSUME_HEADS       - Consume heads for XP
+# FISH_CATCHES        - Catch fish in warzone
+# HARVEST_CROPS       - Harvest crops (set target: SUGAR_CANE, WHEAT, etc.)
+# ============================================
+
+missions:
+
+  # ============================================
+  # HEAD COLLECTION MISSIONS
+  # ============================================
+  
+  skull_collector:
+    display-name: "&e&lSkull Collector"
+    description: "&7Deposit 50 heads into the cauldron"
+    type: DEPOSIT_HEADS
+    required: 50
+    icon: PLAYER_HEAD
+    icon-data: 2
+    rewards:
+      - "eco give {player} 3000"
+      - "hh giveessence {player} 25"
+      - "msg {player} &6+$3,000 &7and &d25 Essence &7for your skulls!"
+  
+  head_hoarder:
+    display-name: "&6&lHead Hoarder"
+    description: "&7Deposit 100 heads into the cauldron"
+    type: DEPOSIT_HEADS
+    required: 100
+    icon: PLAYER_HEAD
+    icon-data: 0
+    rewards:
+      - "eco give {player} 7500"
+      - "hh giveessence {player} 50"
+      - "msg {player} &6+$7,500 &7and &d50 Essence!"
+  
+  trophy_hunter:
+    display-name: "&c&lTrophy Hunter"
+    description: "&7Deposit 200 heads into the cauldron"
+    type: DEPOSIT_HEADS
+    required: 200
+    icon: PLAYER_HEAD
+    icon-data: 1
+    rewards:
+      - "eco give {player} 20000"
+      - "hh giveessence {player} 100"
+      - "give {player} DIAMOND 16"
+      - "msg {player} &6+$20,000&7, &d100 Essence&7, and &b16 Diamonds!"
+
+  # ============================================
+  # XP GRINDING MISSIONS
+  # ============================================
+  
+  xp_consumer:
+    display-name: "&a&lXP Consumer"
+    description: "&7Consume 30 heads for XP"
+    type: CONSUME_HEADS
+    required: 30
+    icon: EXP_BOTTLE
+    rewards:
+      - "eco give {player} 2500"
+      - "hh addxp {player} 500"
+      - "msg {player} &6+$2,500 &7and &a+500 Bonus XP!"
+  
+  head_devourer:
+    display-name: "&2&lHead Devourer"
+    description: "&7Consume 75 heads for XP"
+    type: CONSUME_HEADS
+    required: 75
+    icon: EXP_BOTTLE
+    rewards:
+      - "eco give {player} 6000"
+      - "hh addxp {player} 1500"
+      - "hh giveessence {player} 30"
+      - "msg {player} &6+$6,000&7, &a+1,500 XP&7, and &d30 Essence!"
+
+  # ============================================
+  # MOB SLAYING MISSIONS
+  # ============================================
+  
+  mob_slaughter:
+    display-name: "&c&lMob Slaughter"
+    description: "&7Kill 150 mobs for heads"
+    type: KILL_MOBS
+    required: 150
+    icon: DIAMOND_SWORD
+    rewards:
+      - "eco give {player} 4000"
+      - "hh giveessence {player} 20"
+      - "msg {player} &6+$4,000 &7and &d20 Essence!"
+  
+  mass_extinction:
+    display-name: "&4&lMass Extinction"
+    description: "&7Kill 300 mobs for heads"
+    type: KILL_MOBS
+    required: 300
+    icon: DIAMOND_SWORD
+    rewards:
+      - "eco give {player} 10000"
+      - "hh giveessence {player} 50"
+      - "give {player} DIAMOND 8"
+      - "msg {player} &6+$10,000&7, &d50 Essence&7, and &b8 Diamonds!"
+  
+  zombie_purge:
+    display-name: "&2&lZombie Purge"
+    description: "&7Kill 75 zombies"
+    type: KILL_SPECIFIC_MOB
+    target: ZOMBIE
+    required: 75
+    icon: ROTTEN_FLESH
+    rewards:
+      - "eco give {player} 3500"
+      - "hh givehead {player} zombie 10"
+      - "msg {player} &6+$3,500 &7and &210 Zombie Heads!"
+  
+  skeleton_hunt:
+    display-name: "&f&lSkeleton Hunt"
+    description: "&7Kill 75 skeletons"
+    type: KILL_SPECIFIC_MOB
+    target: SKELETON
+    required: 75
+    icon: BONE
+    rewards:
+      - "eco give {player} 3500"
+      - "hh givehead {player} skeleton 10"
+      - "msg {player} &6+$3,500 &7and &f10 Skeleton Heads!"
+  
+  spider_extermination:
+    display-name: "&8&lSpider Extermination"
+    description: "&7Kill 60 spiders"
+    type: KILL_SPECIFIC_MOB
+    target: SPIDER
+    required: 60
+    icon: STRING
+    rewards:
+      - "eco give {player} 3000"
+      - "hh givehead {player} spider 8"
+      - "msg {player} &6+$3,000 &7and &88 Spider Heads!"
+  
+  creeper_demolition:
+    display-name: "&a&lCreeper Demolition"
+    description: "&7Kill 50 creepers"
+    type: KILL_SPECIFIC_MOB
+    target: CREEPER
+    required: 50
+    icon: SULPHUR
+    rewards:
+      - "eco give {player} 4000"
+      - "hh givehead {player} creeper 8"
+      - "msg {player} &6+$4,000 &7and &a8 Creeper Heads!"
+  
+  enderman_stalker:
+    display-name: "&5&lEnderman Stalker"
+    description: "&7Kill 40 endermen"
+    type: KILL_SPECIFIC_MOB
+    target: ENDERMAN
+    required: 40
+    icon: ENDER_PEARL
+    rewards:
+      - "eco give {player} 6000"
+      - "hh givehead {player} enderman 6"
+      - "give {player} ENDER_PEARL 8"
+      - "msg {player} &6+$6,000&7, &56 Enderman Heads&7, and &d8 Pearls!"
+  
+  blaze_hunter:
+    display-name: "&6&lBlaze Hunter"
+    description: "&7Kill 35 blazes"
+    type: KILL_SPECIFIC_MOB
+    target: BLAZE
+    required: 35
+    icon: BLAZE_ROD
+    rewards:
+      - "eco give {player} 5500"
+      - "hh givehead {player} blaze 6"
+      - "msg {player} &6+$5,500 &7and &66 Blaze Heads!"
+
+  # ============================================
+  # PVP MISSIONS
+  # ============================================
+  
+  pvp_hunter:
+    display-name: "&4&lPvP Hunter"
+    description: "&7Kill 5 players"
+    type: KILL_PLAYERS
+    required: 5
+    icon: GOLDEN_APPLE
+    rewards:
+      - "eco give {player} 8000"
+      - "hh giveessence {player} 40"
+      - "give {player} GOLDEN_APPLE 4"
+      - "msg {player} &6+$8,000&7, &d40 Essence&7, and &64 Gapples!"
+  
+  armor_breaker:
+    display-name: "&9&lArmor Breaker"
+    description: "&7Kill 5 armored players"
+    type: KILL_ARMORED_PLAYERS
+    required: 5
+    icon: DIAMOND_CHESTPLATE
+    rewards:
+      - "eco give {player} 12000"
+      - "hh giveessence {player} 60"
+      - "give {player} GOLDEN_APPLE 1 1"
+      - "msg {player} &6+$12,000&7, &d60 Essence&7, and &6a God Apple!"
+  
+  warzone_dominator:
+    display-name: "&c&lWarzone Dominator"
+    description: "&7Kill 10 players"
+    type: KILL_PLAYERS
+    required: 10
+    icon: DIAMOND_SWORD
+    rewards:
+      - "eco give {player} 25000"
+      - "hh giveessence {player} 100"
+      - "give {player} GOLDEN_APPLE 1 1"
+      - "give {player} DIAMOND 16"
+      - "msg {player} &6+$25,000&7, &d100 Essence&7, &6God Apple&7, and &b16 Diamonds!"
+
+  # ============================================
+  # FISHING MISSIONS
+  # ============================================
+  
+  warzone_angler:
+    display-name: "&3&lWarzone Angler"
+    description: "&7Catch 40 fish in warzone"
+    type: FISH_CATCHES
+    required: 40
+    icon: RAW_FISH
+    rewards:
+      - "eco give {player} 5000"
+      - "hh giveessence {player} 25"
+      - "msg {player} &6+$5,000 &7and &d25 Essence!"
+  
+  master_fisher:
+    display-name: "&b&lMaster Fisher"
+    description: "&7Catch 100 fish in warzone"
+    type: FISH_CATCHES
+    required: 100
+    icon: FISHING_ROD
+    rewards:
+      - "eco give {player} 15000"
+      - "hh giveessence {player} 75"
+      - "give {player} DIAMOND 10"
+      - "msg {player} &6+$15,000&7, &d75 Essence&7, and &b10 Diamonds!"
+
+  # ============================================
+  # FARMING MISSIONS
+  # ============================================
+  
+  cane_grinder:
+    display-name: "&a&lCane Grinder"
+    description: "&7Harvest 3000 sugarcane"
+    type: HARVEST_CROPS
+    target: SUGAR_CANE
+    required: 3000
+    icon: SUGAR_CANE
+    rewards:
+      - "eco give {player} 6000"
+      - "hh giveessence {player} 30"
+      - "msg {player} &6+$6,000 &7and &d30 Essence!"
+  
+  harvest_master:
+    display-name: "&e&lHarvest Master"
+    description: "&7Harvest 6000 sugarcane"
+    type: HARVEST_CROPS
+    target: SUGAR_CANE
+    required: 6000
+    icon: SUGAR_CANE
+    rewards:
+      - "eco give {player} 15000"
+      - "hh giveessence {player} 75"
+      - "give {player} DIAMOND 12"
+      - "msg {player} &6+$15,000&7, &d75 Essence&7, and &b12 Diamonds!"

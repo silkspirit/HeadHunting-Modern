@@ -1,0 +1,1157 @@
+# ============================================
+# FISHING SHOP - Regular Fish & Warzone Fishing Rewards
+# NO ARMOR OR WEAPONS - High value warzone items
+# Multiple denominations for easy selling
+# ============================================
+fishing:
+  name: "&3&lFishing Shop (page %page%)"
+  fillItem:
+    material: STAINED_GLASS_PANE
+    damage: 11
+    name: " "
+  items:
+    # ============ PAGE 1 - Regular Fish & Gear ============
+    # Row 1 - Fishing Equipment & Raw Fish
+    1:
+      type: item
+      item:
+        material: FISHING_ROD
+        quantity: 1
+      buyPrice: 150
+      sellPrice: 20
+      slot: 10
+    2:
+      type: item
+      item:
+        material: RAW_FISH
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 11
+    3:
+      type: item
+      item:
+        material: RAW_FISH
+        quantity: 32
+      buyPrice: 32
+      sellPrice: 4
+      slot: 12
+    4:
+      type: item
+      item:
+        material: RAW_FISH
+        quantity: 64
+        damage: 1
+      buyPrice: 80
+      sellPrice: 10
+      slot: 13
+    5:
+      type: item
+      item:
+        material: RAW_FISH
+        quantity: 32
+        damage: 1
+      buyPrice: 40
+      sellPrice: 5
+      slot: 14
+    6:
+      type: item
+      item:
+        material: RAW_FISH
+        quantity: 16
+        damage: 2
+      buyPrice: 48
+      sellPrice: 6
+      slot: 15
+    7:
+      type: item
+      item:
+        material: RAW_FISH
+        quantity: 16
+        damage: 3
+      buyPrice: 80
+      sellPrice: 10
+      slot: 16
+
+    # Row 2 - Cooked Fish
+    8:
+      type: item
+      item:
+        material: COOKED_FISH
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 19
+    9:
+      type: item
+      item:
+        material: COOKED_FISH
+        quantity: 32
+      buyPrice: 48
+      sellPrice: 6
+      slot: 20
+    10:
+      type: item
+      item:
+        material: COOKED_FISH
+        quantity: 64
+        damage: 1
+      buyPrice: 112
+      sellPrice: 14
+      slot: 21
+    11:
+      type: item
+      item:
+        material: COOKED_FISH
+        quantity: 32
+        damage: 1
+      buyPrice: 56
+      sellPrice: 7
+      slot: 22
+    12:
+      type: item
+      item:
+        material: WATER_BUCKET
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 12
+      slot: 23
+    13:
+      type: item
+      item:
+        material: LILY_PAD
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 24
+    14:
+      type: item
+      item:
+        material: INK_SACK
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 25
+
+    # Row 3 - Ocean Materials
+    15:
+      type: item
+      item:
+        material: PRISMARINE_SHARD
+        quantity: 64
+      buyPrice: 128
+      sellPrice: 16
+      slot: 28
+    16:
+      type: item
+      item:
+        material: PRISMARINE_SHARD
+        quantity: 32
+      buyPrice: 64
+      sellPrice: 8
+      slot: 29
+    17:
+      type: item
+      item:
+        material: PRISMARINE_CRYSTALS
+        quantity: 64
+      buyPrice: 160
+      sellPrice: 20
+      slot: 30
+    18:
+      type: item
+      item:
+        material: PRISMARINE_CRYSTALS
+        quantity: 32
+      buyPrice: 80
+      sellPrice: 10
+      slot: 31
+    19:
+      type: item
+      item:
+        material: PRISMARINE
+        quantity: 64
+      buyPrice: 128
+      sellPrice: 16
+      slot: 32
+    20:
+      type: item
+      item:
+        material: SEA_LANTERN
+        quantity: 16
+      buyPrice: 192
+      sellPrice: 24
+      slot: 33
+    21:
+      type: item
+      item:
+        material: SPONGE
+        quantity: 8
+      buyPrice: 200
+      sellPrice: 25
+      slot: 34
+
+    # Row 4 - Misc Fishing Items
+    22:
+      type: item
+      item:
+        material: NAME_TAG
+        quantity: 1
+      buyPrice: 150
+      sellPrice: 20
+      slot: 37
+    23:
+      type: item
+      item:
+        material: SADDLE
+        quantity: 1
+      buyPrice: 250
+      sellPrice: 30
+      slot: 38
+    24:
+      type: item
+      item:
+        material: TRIPWIRE_HOOK
+        quantity: 64
+      buyPrice: 128
+      sellPrice: 16
+      slot: 39
+    25:
+      type: item
+      item:
+        material: STRING
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 40
+    26:
+      type: item
+      item:
+        material: BOAT
+        quantity: 1
+      buyPrice: 50
+      sellPrice: 6
+      slot: 41
+    27:
+      type: item
+      item:
+        material: PACKED_ICE
+        quantity: 64
+      buyPrice: 192
+      sellPrice: 24
+      slot: 42
+    28:
+      type: item
+      item:
+        material: ICE
+        quantity: 64
+      buyPrice: 128
+      sellPrice: 16
+      slot: 43
+
+    # ============ PAGE 2 - Warzone Fishing COMMON Rewards ============
+    29:
+      type: item
+      item:
+        material: RAW_FISH
+        quantity: 64
+        name: "&7Common Fish"
+        lore:
+          - "&8Just a regular fish..."
+          - "&7Nothing special here."
+          - ""
+          - "&e&oWarzone Fishing Reward"
+      buyPrice: 128
+      sellPrice: 32
+      slot: 10
+      page: 2
+      compareMeta: true
+    30:
+      type: item
+      item:
+        material: RAW_FISH
+        quantity: 32
+        name: "&7Common Fish"
+        lore:
+          - "&8Just a regular fish..."
+          - "&7Nothing special here."
+          - ""
+          - "&e&oWarzone Fishing Reward"
+      buyPrice: 64
+      sellPrice: 16
+      slot: 11
+      page: 2
+      compareMeta: true
+    31:
+      type: item
+      item:
+        material: RAW_FISH
+        quantity: 64
+        damage: 1
+        name: "&6Warzone Salmon"
+        lore:
+          - "&7A salmon from the warzone waters"
+          - ""
+          - "&e&oWarzone Fishing Reward"
+      buyPrice: 192
+      sellPrice: 48
+      slot: 12
+      page: 2
+      compareMeta: true
+    32:
+      type: item
+      item:
+        material: RAW_FISH
+        quantity: 32
+        damage: 1
+        name: "&6Warzone Salmon"
+        lore:
+          - "&7A salmon from the warzone waters"
+          - ""
+          - "&e&oWarzone Fishing Reward"
+      buyPrice: 96
+      sellPrice: 24
+      slot: 13
+      page: 2
+      compareMeta: true
+    33:
+      type: item
+      item:
+        material: RAW_FISH
+        quantity: 16
+        damage: 2
+        name: "&cTropical Fish"
+        lore:
+          - "&7A colorful tropical fish"
+          - ""
+          - "&e&oWarzone Fishing Reward"
+      buyPrice: 96
+      sellPrice: 24
+      slot: 14
+      page: 2
+      compareMeta: true
+    34:
+      type: item
+      item:
+        material: LEATHER_BOOTS
+        quantity: 1
+        name: "&8Soggy Old Boot"
+        lore:
+          - "&7Someone's old boot..."
+          - "&8Smells like fish."
+          - ""
+          - "&c&oWhy would anyone want this?"
+      buyPrice: 25
+      sellPrice: 5
+      slot: 15
+      page: 2
+      compareMeta: true
+    35:
+      type: item
+      item:
+        material: BONE
+        quantity: 64
+        name: "&7Fishbones"
+        lore:
+          - "&7Bones from ancient fish"
+          - ""
+          - "&e&oWarzone Fishing Reward"
+      buyPrice: 96
+      sellPrice: 24
+      slot: 16
+      page: 2
+      compareMeta: true
+
+    # Row 2 - UNCOMMON Warzone Rewards
+    36:
+      type: item
+      item:
+        material: IRON_INGOT
+        quantity: 16
+        name: "&fSunken Iron"
+        lore:
+          - "&7Iron lost in battle..."
+          - "&7Recovered from the depths."
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 800
+      sellPrice: 200
+      slot: 19
+      page: 2
+      compareMeta: true
+    37:
+      type: item
+      item:
+        material: IRON_INGOT
+        quantity: 8
+        name: "&fSunken Iron"
+        lore:
+          - "&7Iron lost in battle..."
+          - "&7Recovered from the depths."
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 400
+      sellPrice: 100
+      slot: 20
+      page: 2
+      compareMeta: true
+    38:
+      type: item
+      item:
+        material: GOLD_INGOT
+        quantity: 16
+        name: "&6Sunken Gold"
+        lore:
+          - "&7Gold lost to the waters"
+          - "&6Still shines bright!"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 1200
+      sellPrice: 300
+      slot: 21
+      page: 2
+      compareMeta: true
+    39:
+      type: item
+      item:
+        material: GOLD_INGOT
+        quantity: 8
+        name: "&6Sunken Gold"
+        lore:
+          - "&7Gold lost to the waters"
+          - "&6Still shines bright!"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 600
+      sellPrice: 150
+      slot: 22
+      page: 2
+      compareMeta: true
+    40:
+      type: item
+      item:
+        material: ENDER_PEARL
+        quantity: 8
+        name: "&5Waterlogged Pearl"
+        lore:
+          - "&7Ender pearls found in the water"
+          - "&5Still functional!"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 640
+      sellPrice: 160
+      slot: 23
+      page: 2
+      compareMeta: true
+    41:
+      type: item
+      item:
+        material: ENDER_PEARL
+        quantity: 4
+        name: "&5Waterlogged Pearl"
+        lore:
+          - "&7Ender pearls found in the water"
+          - "&5Still functional!"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 320
+      sellPrice: 80
+      slot: 24
+      page: 2
+      compareMeta: true
+    42:
+      type: item
+      item:
+        material: GOLDEN_APPLE
+        quantity: 1
+        name: "&6Sunken Gapple"
+        lore:
+          - "&7Someone must have dropped this..."
+          - "&eYour lucky day!"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 400
+      sellPrice: 100
+      slot: 25
+      page: 2
+      compareMeta: true
+
+    # Row 3 - UNCOMMON Coin Pouches
+    43:
+      type: item
+      item:
+        material: GOLD_NUGGET
+        quantity: 64
+        name: "&aSmall Coin Pouch"
+        lore:
+          - "&7A small pouch of coins"
+          - "&aWorth some gold!"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 320
+      sellPrice: 80
+      slot: 28
+      page: 2
+      compareMeta: true
+    44:
+      type: item
+      item:
+        material: GOLD_NUGGET
+        quantity: 32
+        name: "&aSmall Coin Pouch"
+        lore:
+          - "&7A small pouch of coins"
+          - "&aWorth some gold!"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 160
+      sellPrice: 40
+      slot: 29
+      page: 2
+      compareMeta: true
+    45:
+      type: item
+      item:
+        material: GOLD_INGOT
+        quantity: 16
+        name: "&6Large Coin Pouch"
+        lore:
+          - "&7A large pouch of coins"
+          - "&6Quite valuable!"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 1600
+      sellPrice: 400
+      slot: 30
+      page: 2
+      compareMeta: true
+    46:
+      type: item
+      item:
+        material: GOLD_INGOT
+        quantity: 8
+        name: "&6Large Coin Pouch"
+        lore:
+          - "&7A large pouch of coins"
+          - "&6Quite valuable!"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 800
+      sellPrice: 200
+      slot: 31
+      page: 2
+      compareMeta: true
+    47:
+      type: item
+      item:
+        material: MAP
+        quantity: 1
+        name: "&e&lMysterious Treasure Map"
+        lore:
+          - "&7An old map with markings..."
+          - "&eX marks the spot!"
+          - ""
+          - "&7&oMaybe it leads somewhere?"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 1000
+      sellPrice: 250
+      slot: 32
+      page: 2
+      compareMeta: true
+    48:
+      type: item
+      item:
+        material: EXP_BOTTLE
+        quantity: 64
+        name: "&aBottled Experience"
+        lore:
+          - "&7Experience from the deep"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 1280
+      sellPrice: 320
+      slot: 33
+      page: 2
+      compareMeta: true
+    49:
+      type: item
+      item:
+        material: EXP_BOTTLE
+        quantity: 32
+        name: "&aBottled Experience"
+        lore:
+          - "&7Experience from the deep"
+          - ""
+          - "&a&oUncommon Warzone Fishing"
+      buyPrice: 640
+      sellPrice: 160
+      slot: 34
+      page: 2
+      compareMeta: true
+
+    # Row 4 - RARE Items
+    50:
+      type: item
+      item:
+        material: DIAMOND
+        quantity: 16
+        name: "&bWarzone Diamond"
+        lore:
+          - "&7A diamond lost in the chaos"
+          - "&bShines bright despite the war"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 4000
+      sellPrice: 1000
+      slot: 37
+      page: 2
+      compareMeta: true
+    51:
+      type: item
+      item:
+        material: DIAMOND
+        quantity: 8
+        name: "&bWarzone Diamond"
+        lore:
+          - "&7A diamond lost in the chaos"
+          - "&bShines bright despite the war"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 2000
+      sellPrice: 500
+      slot: 38
+      page: 2
+      compareMeta: true
+    52:
+      type: item
+      item:
+        material: DIAMOND
+        quantity: 4
+        name: "&bWarzone Diamond"
+        lore:
+          - "&7A diamond lost in the chaos"
+          - "&bShines bright despite the war"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 1000
+      sellPrice: 250
+      slot: 39
+      page: 2
+      compareMeta: true
+    53:
+      type: item
+      item:
+        material: EMERALD
+        quantity: 16
+        name: "&aSea Emerald"
+        lore:
+          - "&7Emeralds polished by the sea"
+          - "&aGleaming with ocean magic"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 3200
+      sellPrice: 800
+      slot: 40
+      page: 2
+      compareMeta: true
+    54:
+      type: item
+      item:
+        material: EMERALD
+        quantity: 8
+        name: "&aSea Emerald"
+        lore:
+          - "&7Emeralds polished by the sea"
+          - "&aGleaming with ocean magic"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 1600
+      sellPrice: 400
+      slot: 41
+      page: 2
+      compareMeta: true
+    55:
+      type: item
+      item:
+        material: GOLDEN_APPLE
+        quantity: 1
+        damage: 1
+        name: "&6&lEnchanted Golden Apple"
+        lore:
+          - "&7The legendary god apple!"
+          - "&6Found in warzone waters"
+          - "&eTruly a rare find!"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 15000
+      sellPrice: 3750
+      slot: 42
+      page: 2
+      compareMeta: true
+    56:
+      type: item
+      item:
+        material: DIAMOND_BLOCK
+        quantity: 1
+        name: "&b&lCompressed Diamonds"
+        lore:
+          - "&7Diamonds compressed by"
+          - "&7the pressure of the deep"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 2500
+      sellPrice: 625
+      slot: 43
+      page: 2
+      compareMeta: true
+
+    # ============ PAGE 3 - EPIC & LEGENDARY Warzone Rewards ============
+    57:
+      type: item
+      item:
+        material: NETHER_STAR
+        quantity: 1
+        name: "&5&lStar of the Depths"
+        lore:
+          - "&5EPIC"
+          - ""
+          - "&dA star that fell into the ocean"
+          - "&7Radiates with cosmic energy"
+          - ""
+          - "&5&oEpic Warzone Fishing"
+      buyPrice: 25000
+      sellPrice: 6250
+      slot: 10
+      page: 3
+      compareMeta: true
+    58:
+      type: item
+      item:
+        material: BEACON
+        quantity: 1
+        name: "&5&lLighthouse Core"
+        lore:
+          - "&5EPIC"
+          - ""
+          - "&dThe heart of an ancient lighthouse"
+          - "&7Still guides sailors home"
+          - ""
+          - "&5&oEpic Warzone Fishing"
+      buyPrice: 50000
+      sellPrice: 12500
+      slot: 11
+      page: 3
+      compareMeta: true
+    59:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        quantity: 1
+        damage: 1
+        name: "&5&lDrowned Warlord's Skull"
+        lore:
+          - "&5EPIC"
+          - ""
+          - "&dThe skull of a legendary warrior"
+          - "&7Lost to the warzone depths"
+          - ""
+          - "&5&oEpic Warzone Fishing"
+      buyPrice: 15000
+      sellPrice: 3750
+      slot: 12
+      page: 3
+      compareMeta: true
+    60:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        quantity: 1
+        damage: 0
+        name: "&8Drowned Pirate Skull"
+        lore:
+          - "&9RARE"
+          - ""
+          - "&7The skull of a fallen pirate"
+          - "&8Cursed by the sea"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 5000
+      sellPrice: 1250
+      slot: 13
+      page: 3
+      compareMeta: true
+    61:
+      type: item
+      item:
+        material: GHAST_TEAR
+        quantity: 16
+        name: "&fMermaid's Tears"
+        lore:
+          - "&9RARE"
+          - ""
+          - "&7Tears from a sea creature"
+          - "&fValued by alchemists"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 3200
+      sellPrice: 800
+      slot: 14
+      page: 3
+      compareMeta: true
+    62:
+      type: item
+      item:
+        material: BLAZE_ROD
+        quantity: 32
+        name: "&6Sunken Treasure Rod"
+        lore:
+          - "&9RARE"
+          - ""
+          - "&7A magical rod from the depths"
+          - "&6Still warm to the touch"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 2400
+      sellPrice: 600
+      slot: 15
+      page: 3
+      compareMeta: true
+    63:
+      type: item
+      item:
+        material: SLIME_BALL
+        quantity: 64
+        name: "&aJellyfish Goo"
+        lore:
+          - "&a&oUncommon Warzone Fishing"
+          - ""
+          - "&7Sticky substance from jellyfish"
+      buyPrice: 640
+      sellPrice: 160
+      slot: 16
+      page: 3
+      compareMeta: true
+
+    # Row 2 - Legendary Materials
+    64:
+      type: item
+      item:
+        material: DIAMOND_BLOCK
+        quantity: 4
+        name: "&6&l✦ Ocean's Treasury ✦"
+        lore:
+          - "&6&lLEGENDARY"
+          - ""
+          - "&eDiamonds from the deepest"
+          - "&etreasure chests of the sea"
+          - ""
+          - "&6&oLegendary Warzone Fishing"
+      buyPrice: 12000
+      sellPrice: 3000
+      slot: 19
+      page: 3
+      compareMeta: true
+    65:
+      type: item
+      item:
+        material: EMERALD_BLOCK
+        quantity: 4
+        name: "&6&l✦ Poseidon's Fortune ✦"
+        lore:
+          - "&6&lLEGENDARY"
+          - ""
+          - "&eEmeralds blessed by"
+          - "&ethe god of the sea"
+          - ""
+          - "&6&oLegendary Warzone Fishing"
+      buyPrice: 10000
+      sellPrice: 2500
+      slot: 20
+      page: 3
+      compareMeta: true
+    66:
+      type: item
+      item:
+        material: GOLD_BLOCK
+        quantity: 8
+        name: "&6&l✦ Sunken Treasure ✦"
+        lore:
+          - "&6&lLEGENDARY"
+          - ""
+          - "&eGold from an ancient"
+          - "&eshipwreck treasure room"
+          - ""
+          - "&6&oLegendary Warzone Fishing"
+      buyPrice: 8000
+      sellPrice: 2000
+      slot: 21
+      page: 3
+      compareMeta: true
+    67:
+      type: item
+      item:
+        material: IRON_BLOCK
+        quantity: 16
+        name: "&5&lAncient Anchor Fragments"
+        lore:
+          - "&5EPIC"
+          - ""
+          - "&dPieces of legendary anchors"
+          - "&7From ships long lost"
+          - ""
+          - "&5&oEpic Warzone Fishing"
+      buyPrice: 6400
+      sellPrice: 1600
+      slot: 22
+      page: 3
+      compareMeta: true
+    68:
+      type: item
+      item:
+        material: PRISMARINE
+        quantity: 64
+        damage: 2
+        name: "&bDark Prismarine"
+        lore:
+          - "&9RARE"
+          - ""
+          - "&7Rare prismarine from the depths"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 1280
+      sellPrice: 320
+      slot: 23
+      page: 3
+      compareMeta: true
+    69:
+      type: item
+      item:
+        material: SPONGE
+        quantity: 16
+        name: "&eSea Sponge"
+        lore:
+          - "&a&oUncommon Warzone Fishing"
+          - ""
+          - "&7Fresh from the ocean floor"
+      buyPrice: 800
+      sellPrice: 200
+      slot: 24
+      page: 3
+      compareMeta: true
+    70:
+      type: item
+      item:
+        material: SEA_LANTERN
+        quantity: 32
+        name: "&bDeep Sea Lantern"
+        lore:
+          - "&9RARE"
+          - ""
+          - "&7Glows with mysterious light"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 1600
+      sellPrice: 400
+      slot: 25
+      page: 3
+      compareMeta: true
+
+    # Row 3 - Books & Special Items
+    71:
+      type: item
+      item:
+        material: BOOK
+        quantity: 16
+        name: "&5Waterlogged Tome"
+        lore:
+          - "&9RARE"
+          - ""
+          - "&7Ancient knowledge, slightly damp"
+          - "&7Contains forgotten secrets"
+          - ""
+          - "&9&oRare Warzone Fishing"
+      buyPrice: 1600
+      sellPrice: 400
+      slot: 28
+      page: 3
+      compareMeta: true
+    72:
+      type: item
+      item:
+        material: ENCHANTED_BOOK
+        quantity: 1
+        name: "&d&lSea-Touched Tome"
+        lore:
+          - "&5EPIC"
+          - ""
+          - "&dA book infused with"
+          - "&docean magic"
+          - ""
+          - "&5&oEpic Warzone Fishing"
+      buyPrice: 5000
+      sellPrice: 1250
+      slot: 29
+      page: 3
+      compareMeta: true
+    73:
+      type: item
+      item:
+        material: EYE_OF_ENDER
+        quantity: 8
+        name: "&5Eye of the Deep"
+        lore:
+          - "&5EPIC"
+          - ""
+          - "&dAn eye that sees through"
+          - "&dthe darkest waters"
+          - ""
+          - "&5&oEpic Warzone Fishing"
+      buyPrice: 4000
+      sellPrice: 1000
+      slot: 30
+      page: 3
+      compareMeta: true
+    74:
+      type: item
+      item:
+        material: MAGMA_CREAM
+        quantity: 32
+        name: "&cUndersea Magma"
+        lore:
+          - "&a&oUncommon Warzone Fishing"
+          - ""
+          - "&7From volcanic vents"
+      buyPrice: 960
+      sellPrice: 240
+      slot: 31
+      page: 3
+      compareMeta: true
+    75:
+      type: item
+      item:
+        material: CLAY_BALL
+        quantity: 64
+        name: "&7Sea Clay"
+        lore:
+          - "&e&oWarzone Fishing Reward"
+          - ""
+          - "&7Soft clay from the ocean bed"
+      buyPrice: 128
+      sellPrice: 32
+      slot: 32
+      page: 3
+      compareMeta: true
+    76:
+      type: item
+      item:
+        material: GLOWSTONE_DUST
+        quantity: 64
+        name: "&eSea Phosphorus"
+        lore:
+          - "&a&oUncommon Warzone Fishing"
+          - ""
+          - "&7Glowing dust from deep fish"
+      buyPrice: 320
+      sellPrice: 80
+      slot: 33
+      page: 3
+      compareMeta: true
+    77:
+      type: item
+      item:
+        material: REDSTONE
+        quantity: 64
+        name: "&cCoral Dust"
+        lore:
+          - "&a&oUncommon Warzone Fishing"
+          - ""
+          - "&7Ground coral from the reef"
+      buyPrice: 256
+      sellPrice: 64
+      slot: 34
+      page: 3
+      compareMeta: true
+
+    # Row 4 - Ocean Decoration Blocks
+    78:
+      type: item
+      item:
+        material: STAINED_GLASS
+        quantity: 64
+        damage: 11
+        name: "&bOcean Glass"
+      buyPrice: 192
+      sellPrice: 24
+      slot: 37
+      page: 3
+    79:
+      type: item
+      item:
+        material: STAINED_CLAY
+        quantity: 64
+        damage: 11
+        name: "&bOcean Clay"
+      buyPrice: 224
+      sellPrice: 28
+      slot: 38
+      page: 3
+    80:
+      type: item
+      item:
+        material: WOOL
+        quantity: 64
+        damage: 11
+        name: "&bOcean Wool"
+      buyPrice: 192
+      sellPrice: 24
+      slot: 39
+      page: 3
+    81:
+      type: item
+      item:
+        material: STAINED_GLASS
+        quantity: 64
+        damage: 3
+        name: "&bDeep Ocean Glass"
+      buyPrice: 192
+      sellPrice: 24
+      slot: 40
+      page: 3
+    82:
+      type: item
+      item:
+        material: STAINED_CLAY
+        quantity: 64
+        damage: 3
+        name: "&bDeep Ocean Clay"
+      buyPrice: 224
+      sellPrice: 28
+      slot: 41
+      page: 3
+    83:
+      type: item
+      item:
+        material: BANNER
+        quantity: 1
+        damage: 4
+        name: "&3Ocean Banner"
+        lore:
+          - "&7A banner of the sea"
+      buyPrice: 300
+      sellPrice: 40
+      slot: 42
+      page: 3
+    84:
+      type: item
+      item:
+        material: BANNER
+        quantity: 1
+        damage: 11
+        name: "&bLight Ocean Banner"
+        lore:
+          - "&7A light blue banner"
+      buyPrice: 300
+      sellPrice: 40
+      slot: 43
+      page: 3

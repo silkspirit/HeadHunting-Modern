@@ -1,0 +1,162 @@
+# Level Configuration
+# HARDCORE GRIND - 1-2+ hours per level
+
+# XP per head: Basic ~15-20, Advanced ~30-50, Extreme ~75-150
+# 1 inventory = 36 heads (heads don't stack)
+# Early levels: ~1 inventory to rank up
+# Late levels: ~30 inventories to rank up
+
+levels:
+  # ============================================
+  # STARTER TIER (Levels 1-3)
+  # 1-2 inventories each
+  # ============================================
+  
+  1:
+    xp-required: 0
+    money-cost: 0
+    mob-type: PIG
+    spawner-unlock: PIG
+    rewards: []
+  
+  2:
+    # ~1 inventory of pig heads (36 * 15 = 540)
+    xp-required: 500
+    money-cost: 25000
+    mob-type: SHEEP
+    spawner-unlock: SHEEP
+    rewards:
+      - "msg {player} &b&lLEVEL UP! &7You unlocked &eSheep &7spawners!"
+  
+  3:
+    # ~2 inventories (72 heads)
+    xp-required: 1200
+    money-cost: 50000
+    mob-type: CHICKEN
+    spawner-unlock: CHICKEN
+    rewards:
+      - "msg {player} &b&lLEVEL UP! &7You unlocked &eChicken &7spawners!"
+
+  # ============================================
+  # BASIC TIER (Levels 4-6)
+  # 3-5 inventories each
+  # ============================================
+  
+  4:
+    # ~3 inventories (108 heads)
+    xp-required: 2500
+    money-cost: 100000
+    mob-type: ZOMBIE
+    spawner-unlock: ZOMBIE
+    rewards:
+      - "msg {player} &b&lLEVEL UP! &7You unlocked &2Zombie &7spawners!"
+  
+  5:
+    # ~4 inventories (144 heads)
+    xp-required: 4500
+    money-cost: 200000
+    mob-type: CREEPER
+    spawner-unlock: CREEPER
+    rewards:
+      - "msg {player} &a&lBASIC COMPLETE! &7You unlocked &aCreeper &7spawners!"
+      - "give {player} DIAMOND 3"
+  
+  6:
+    # ~5 inventories (180 heads)
+    xp-required: 7500
+    money-cost: 400000
+    mob-type: COW
+    spawner-unlock: COW
+    rewards:
+      - "msg {player} &b&lLEVEL UP! &7You unlocked &fCow &7spawners!"
+
+  # ============================================
+  # ADVANCED TIER (Levels 7-9)
+  # 6-10 inventories each
+  # ============================================
+  
+  7:
+    # ~6 inventories (216 heads)
+    xp-required: 12000
+    money-cost: 750000
+    mob-type: SPIDER
+    spawner-unlock: SPIDER
+    rewards:
+      - "msg {player} &9&lADVANCED TIER! &7You unlocked &8Spider &7spawners!"
+  
+  8:
+    # ~8 inventories (288 heads)
+    xp-required: 18000
+    money-cost: 1250000
+    mob-type: SKELETON
+    spawner-unlock: SKELETON
+    rewards:
+      - "msg {player} &b&lLEVEL UP! &7You unlocked &fSkeleton &7spawners!"
+  
+  9:
+    # ~10 inventories (360 heads)
+    xp-required: 27000
+    money-cost: 2000000
+    mob-type: CAVE_SPIDER
+    spawner-unlock: CAVE_SPIDER
+    rewards:
+      - "msg {player} &b&lLEVEL UP! &7You unlocked &8Cave Spider &7spawners!"
+      - "give {player} DIAMOND 5"
+
+  # ============================================
+  # EXTREME TIER (Levels 10-12)
+  # 12-20 inventories each
+  # ============================================
+  
+  10:
+    # ~12 inventories (432 heads)
+    xp-required: 40000
+    money-cost: 4000000
+    mob-type: BLAZE
+    spawner-unlock: BLAZE
+    rewards:
+      - "msg {player} &6&lEXTREME TIER! &7You unlocked &6Blaze &7spawners!"
+  
+  11:
+    # ~16 inventories (576 heads)
+    xp-required: 60000
+    money-cost: 7500000
+    mob-type: ENDERMAN
+    spawner-unlock: ENDERMAN
+    rewards:
+      - "msg {player} &b&lLEVEL UP! &7You unlocked &5Enderman &7spawners!"
+  
+  12:
+    # ~20 inventories (720 heads)
+    xp-required: 85000
+    money-cost: 12000000
+    mob-type: IRON_GOLEM
+    spawner-unlock: IRON_GOLEM
+    rewards:
+      - "msg {player} &b&lLEVEL UP! &7You unlocked &7Iron Golem &7spawners!"
+      - "give {player} DIAMOND 10"
+
+  # ============================================
+  # DIVINE TIER (Levels 13-14)
+  # 25-30 inventories each
+  # ============================================
+  
+  13:
+    # ~25 inventories (900 heads)
+    xp-required: 120000
+    money-cost: 20000000
+    mob-type: VILLAGER
+    spawner-unlock: VILLAGER
+    rewards:
+      - "msg {player} &5&lDIVINE TIER! &7You unlocked &aVillager &7spawners!"
+  
+  14:
+    # ~30 inventories (1080 heads)
+    xp-required: 165000
+    money-cost: 35000000
+    mob-type: WITCH
+    spawner-unlock: WITCH
+    rewards:
+      - "msg {player} &d&lMAX LEVEL! &7You are a &5&lHeadHunting Legend!"
+      - "give {player} DIAMOND_BLOCK 5"
+      - "give {player} EMERALD_BLOCK 5"

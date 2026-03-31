@@ -1,0 +1,422 @@
+# ============================================
+# MOB HEADS SHOP - HeadHunting Integration
+# Sell-only shop for mob heads with XP bonus!
+# Players get HeadHunting XP when consuming heads
+# ============================================
+heads:
+  name: "&6&lMob Heads (page %page%)"
+  size: 54
+  fillItem:
+    material: STAINED_GLASS_PANE
+    damage: 1
+    name: " "
+  items:
+    # ============ BASIC TIER - Row 1 ============
+    # Tip shown in shop
+    0:
+      type: dummy
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&e&lHEAD HUNTING"
+        lore:
+          - "&7Kill mobs to collect their heads!"
+          - "&7"
+          - "&fSell heads for &amoney"
+          - "&fOr consume for &bXP + progress"
+          - "&7"
+          - "&8Shift-click heads in inventory"
+          - "&8to quick-sell with Vault"
+      slot: 4
+
+    1:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&fPig Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$8"
+          - "&7XP: &b15"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:PIG"
+      sellPrice: 8
+      slot: 10
+    
+    2:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&fSheep Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$10"
+          - "&7XP: &b18"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:SHEEP"
+      sellPrice: 10
+      slot: 11
+    
+    3:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&fChicken Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$10"
+          - "&7XP: &b18"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:CHICKEN"
+      sellPrice: 10
+      slot: 12
+    
+    4:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&fWolf Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$15"
+          - "&7XP: &b22"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:WOLF"
+      sellPrice: 15
+      slot: 13
+    
+    5:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&fRabbit Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$18"
+          - "&7XP: &b25"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:RABBIT"
+      sellPrice: 18
+      slot: 14
+    
+    6:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&fZombie Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$12"
+          - "&7XP: &b20"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:ZOMBIE"
+      sellPrice: 12
+      slot: 15
+    
+    7:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&fCreeper Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$20"
+          - "&7XP: &b28"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:CREEPER"
+      sellPrice: 20
+      slot: 16
+
+    # ============ ADVANCED TIER - Row 2 ============
+    8:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&aCow Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$35"
+          - "&7XP: &b35"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:COW"
+      sellPrice: 35
+      slot: 19
+    
+    9:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&aHorse Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$45"
+          - "&7XP: &b40"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:HORSE"
+      sellPrice: 45
+      slot: 20
+    
+    10:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&aSpider Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$50"
+          - "&7XP: &b42"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:SPIDER"
+      sellPrice: 50
+      slot: 21
+    
+    11:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&aSkeleton Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$60"
+          - "&7XP: &b48"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:SKELETON"
+      sellPrice: 60
+      slot: 22
+    
+    12:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&aCave Spider Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$70"
+          - "&7XP: &b55"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:CAVE_SPIDER"
+      sellPrice: 70
+      slot: 23
+    
+    13:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&aEnderman Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$85"
+          - "&7XP: &b65"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:ENDERMAN"
+      sellPrice: 85
+      slot: 25
+
+    # ============ EXTREME TIER - Row 3 ============
+    14:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&bGuardian Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$125"
+          - "&7XP: &b85"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:GUARDIAN"
+      sellPrice: 125
+      slot: 28
+    
+    15:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&bBlaze Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$150"
+          - "&7XP: &b100"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:BLAZE"
+      sellPrice: 150
+      slot: 29
+    
+    16:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&bZombie Pigman Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$100"
+          - "&7XP: &b75"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:PIG_ZOMBIE"
+      sellPrice: 100
+      slot: 30
+    
+    17:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&bWitch Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$175"
+          - "&7XP: &b110"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:WITCH"
+      sellPrice: 175
+      slot: 31
+    
+    18:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&bVillager Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$200"
+          - "&7XP: &b120"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:VILLAGER"
+      sellPrice: 200
+      slot: 32
+    
+    19:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&bGhast Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$275"
+          - "&7XP: &b140"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:GHAST"
+      sellPrice: 275
+      slot: 33
+    
+    20:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&bWither Skeleton Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$300"
+          - "&7XP: &b150"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&8HeadHunting_Head:WITHER_SKELETON"
+      sellPrice: 300
+      slot: 34
+
+    # ============ DIVINE TIER - Row 4 ============
+    21:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&dIron Golem Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$750"
+          - "&7XP: &b250"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&6Rare Drop!"
+          - "&8HeadHunting_Head:IRON_GOLEM"
+      sellPrice: 750
+      slot: 38
+    
+    22:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&6Elder Guardian Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$2,500"
+          - "&7XP: &b500"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&6Boss Drop!"
+          - "&8HeadHunting_Head:ELDER_GUARDIAN"
+      sellPrice: 2500
+      slot: 40
+    
+    23:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&6&lWither Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$10,000"
+          - "&7XP: &b1,000"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&c&lBOSS DROP!"
+          - "&8HeadHunting_Head:WITHER"
+      sellPrice: 10000
+      slot: 41
+    
+    24:
+      type: item
+      item:
+        material: PLAYER_HEAD
+        damage: 3
+        quantity: 1
+        name: "&6&lEnder Dragon Head"
+        lore:
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&7Sell: &a$25,000"
+          - "&7XP: &b2,000"
+          - "&8━━━━━━━━━━━━━━━━━"
+          - "&5&lLEGENDARY DROP!"
+          - "&8HeadHunting_Head:ENDER_DRAGON"
+      sellPrice: 25000
+      slot: 42

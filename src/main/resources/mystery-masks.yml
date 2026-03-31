@@ -1,0 +1,87 @@
+# ============================================
+# Mystery Mask Configuration
+# ============================================
+# Consumable items that give random masks!
+# Give with: /hunt givemystery <player> <rarity>
+# 
+# Chances are weighted (higher = more likely)
+# Example: pig: 100, enderman: 10 means pig is 10x more likely
+
+rarities:
+  
+  # ============================================
+  # COMMON - Basic tier masks
+  # ============================================
+  common:
+    masks:
+      pig: 100
+      sheep: 100
+      chicken: 80
+      cow: 60
+      wolf: 40
+  
+  # ============================================
+  # UNCOMMON - Basic + some advanced
+  # ============================================
+  uncommon:
+    masks:
+      pig: 60
+      sheep: 60
+      chicken: 60
+      cow: 50
+      wolf: 40
+      zombie: 40
+      spider: 30
+      skeleton: 30
+  
+  # ============================================
+  # RARE - Advanced tier masks
+  # ============================================
+  rare:
+    masks:
+      zombie: 50
+      spider: 50
+      skeleton: 50
+      creeper: 40
+      cave_spider: 30
+      enderman: 20
+      blaze: 15
+  
+  # ============================================
+  # EPIC - Advanced + some extreme
+  # ============================================
+  epic:
+    masks:
+      creeper: 40
+      cave_spider: 40
+      enderman: 35
+      blaze: 30
+      wither_skeleton: 20
+      iron_golem: 15
+      witch: 10
+  
+  # ============================================
+  # LEGENDARY - Extreme tier masks
+  # ============================================
+  legendary:
+    masks:
+      enderman: 30
+      blaze: 30
+      wither_skeleton: 25
+      iron_golem: 20
+      witch: 15
+      guardian: 10
+      elder_guardian: 5
+  
+  # ============================================
+  # DIVINE - Best masks, very rare
+  # ============================================
+  divine:
+    masks:
+      wither_skeleton: 30
+      iron_golem: 25
+      witch: 20
+      guardian: 20
+      elder_guardian: 15
+      undead_horse: 10
+      skeleton_horse: 10

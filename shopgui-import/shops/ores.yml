@@ -1,0 +1,244 @@
+# ============================================
+# ORES SHOP - Minerals, Ingots, Gems
+# Multiple stack sizes for easy selling
+# ============================================
+ores:
+  name: "&3&lOres (page %page%)"
+  size: 54
+  fillItem:
+    material: STAINED_GLASS_PANE
+    damage: 15
+    name: " "
+  items:
+    # ============ Row 1 - Coal & Iron ============
+    1:
+      type: item
+      item:
+        material: COAL
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 10
+    2:
+      type: item
+      item:
+        material: COAL
+        quantity: 32
+      buyPrice: 32
+      sellPrice: 4
+      slot: 11
+    3:
+      type: item
+      item:
+        material: COAL_BLOCK
+        quantity: 64
+      buyPrice: 576
+      sellPrice: 72
+      slot: 12
+    4:
+      type: item
+      item:
+        material: IRON_INGOT
+        quantity: 64
+      buyPrice: 384
+      sellPrice: 48
+      slot: 13
+    5:
+      type: item
+      item:
+        material: IRON_INGOT
+        quantity: 32
+      buyPrice: 192
+      sellPrice: 24
+      slot: 14
+    6:
+      type: item
+      item:
+        material: IRON_BLOCK
+        quantity: 16
+      buyPrice: 864
+      sellPrice: 108
+      slot: 15
+    7:
+      type: item
+      item:
+        material: IRON_ORE
+        quantity: 64
+      buyPrice: 256
+      sellPrice: 32
+      slot: 16
+
+    # ============ Row 2 - Gold ============
+    8:
+      type: item
+      item:
+        material: GOLD_INGOT
+        quantity: 64
+      buyPrice: 512
+      sellPrice: 64
+      slot: 19
+    9:
+      type: item
+      item:
+        material: GOLD_INGOT
+        quantity: 32
+      buyPrice: 256
+      sellPrice: 32
+      slot: 20
+    10:
+      type: item
+      item:
+        material: GOLD_BLOCK
+        quantity: 16
+      buyPrice: 1152
+      sellPrice: 144
+      slot: 21
+    11:
+      type: item
+      item:
+        material: GOLD_NUGGET
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 22
+    12:
+      type: item
+      item:
+        material: GOLD_ORE
+        quantity: 64
+      buyPrice: 320
+      sellPrice: 40
+      slot: 23
+    13:
+      type: item
+      item:
+        material: QUARTZ
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 24
+    14:
+      type: item
+      item:
+        material: QUARTZ_BLOCK
+        quantity: 64
+      buyPrice: 256
+      sellPrice: 32
+      slot: 25
+
+    # ============ Row 3 - Diamonds & Emeralds ============
+    15:
+      type: item
+      item:
+        material: DIAMOND
+        quantity: 64
+      buyPrice: 2560
+      sellPrice: 320
+      slot: 28
+    16:
+      type: item
+      item:
+        material: DIAMOND
+        quantity: 32
+      buyPrice: 1280
+      sellPrice: 160
+      slot: 29
+    17:
+      type: item
+      item:
+        material: DIAMOND
+        quantity: 16
+      buyPrice: 640
+      sellPrice: 80
+      slot: 30
+    18:
+      type: item
+      item:
+        material: DIAMOND_BLOCK
+        quantity: 4
+      buyPrice: 1440
+      sellPrice: 180
+      slot: 31
+    19:
+      type: item
+      item:
+        material: EMERALD
+        quantity: 64
+      buyPrice: 1920
+      sellPrice: 240
+      slot: 32
+    20:
+      type: item
+      item:
+        material: EMERALD
+        quantity: 32
+      buyPrice: 960
+      sellPrice: 120
+      slot: 33
+    21:
+      type: item
+      item:
+        material: EMERALD_BLOCK
+        quantity: 4
+      buyPrice: 1080
+      sellPrice: 135
+      slot: 34
+
+    # ============ Row 4 - Lapis, Redstone, Special ============
+    22:
+      type: item
+      item:
+        material: INK_SACK
+        quantity: 64
+        damage: 4
+      buyPrice: 128
+      sellPrice: 16
+      slot: 37
+    23:
+      type: item
+      item:
+        material: LAPIS_BLOCK
+        quantity: 16
+      buyPrice: 288
+      sellPrice: 36
+      slot: 38
+    24:
+      type: item
+      item:
+        material: REDSTONE
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 39
+    25:
+      type: item
+      item:
+        material: REDSTONE_BLOCK
+        quantity: 16
+      buyPrice: 216
+      sellPrice: 27
+      slot: 40
+    26:
+      type: item
+      item:
+        material: GLOWSTONE_DUST
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 41
+    27:
+      type: item
+      item:
+        material: FLINT
+        quantity: 64
+      buyPrice: 32
+      sellPrice: 4
+      slot: 42
+    28:
+      type: item
+      item:
+        material: NETHER_STAR
+        quantity: 1
+      buyPrice: 12500
+      sellPrice: 1500
+      slot: 43

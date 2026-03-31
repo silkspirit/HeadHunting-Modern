@@ -1,0 +1,909 @@
+# Mask Configuration
+# Define all masks, their textures, abilities, and level scaling
+
+# Ability Types:
+#   PASSIVE - Always active when worn
+#   ON_HIT - Triggers when hitting an enemy
+#   ON_DAMAGED - Triggers when taking damage
+#   ON_KILL - Triggers when killing an entity
+#   ON_MINE - Triggers when breaking blocks
+#   ON_FISH - Triggers when fishing
+
+# Effect Types:
+#   POTION - Apply potion effect (uses potion-type, duration, amplifier)
+#   DAMAGE_MULTIPLIER - Multiply damage dealt
+#   DAMAGE_REDUCTION - Reduce damage taken
+#   HEALTH_BOOST - Add extra hearts
+#   SPAWN_MINIONS - Spawn mobs to fight for you
+#   BONUS_DROPS - Increase mob drops
+#   BONUS_XP - Increase XP gained
+#   SPECIAL - Custom coded effect (uses special-id)
+
+masks:
+  # ============================================
+  # RANKUP MASKS (14)
+  # ============================================
+  
+  pig:
+    display-name: "Pig Mask"
+    tier: RANKUP
+    associated-level: 1
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmExOGQ0MDQzY2Q2YzkwMzg2Njc4ODkxNGZkNTM0MzE1MjgxYWY5ZjI1OWUzNDgzN2UzZTE3NWU1NDVjMmVkZSJ9fX0="
+    craft-cost: 50
+    level-costs: [75, 150, 300, 600]
+    abilities:
+      1:
+        - description: "Increased potion duration"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: POTION_DURATION_BOOST
+          value: 10
+      2:
+        - description: "Increased potion duration II"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: POTION_DURATION_BOOST
+          value: 20
+      3:
+        - description: "Increased potion duration III"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: POTION_DURATION_BOOST
+          value: 30
+      4:
+        - description: "Permanent Saturation"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SATURATION
+          amplifier: 0
+          duration: -1
+      5:
+        - description: "Chance for golden apples back"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: GAPPLE_RETURN
+          chance: 15
+  
+  sheep:
+    display-name: "Sheep Mask"
+    tier: RANKUP
+    associated-level: 2
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTA2OGQzMzJhYWJlOWI4Nzc0MGIzZmFkZjU1NzI0NTJiZWY2NzlmN2FhNTdlOGVjMWUwMTc2Nzg5NzFhZTgwNyJ9fX0="
+    craft-cost: 75
+    level-costs: [120, 240, 450, 900]
+    abilities:
+      1:
+        - description: "Bonus crop drops"
+          type: ON_MINE
+          effect: SPECIAL
+          special-id: BONUS_CROPS
+          chance: 15
+      2:
+        - description: "Increased bonus crop drops"
+          type: ON_MINE
+          effect: SPECIAL
+          special-id: BONUS_CROPS
+          chance: 25
+      3:
+        - description: "Permanent Haste I"
+          type: PASSIVE
+          effect: POTION
+          potion-type: FAST_DIGGING
+          amplifier: 0
+          duration: -1
+      4:
+        - description: "Cannot trample crops"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: NO_TRAMPLE
+      5:
+        - description: "Haste II while farming"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: FARMING_HASTE
+          amplifier: 1
+  
+  chicken:
+    display-name: "Chicken Mask"
+    tier: RANKUP
+    associated-level: 3
+    # Custom chicken head texture from minecraft-heads.com/custom-heads/head/96822-chicken
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzM4NmM2ZjIxMTE1MmYzOWM2NGYxOTgxMTAxOGY0YjMzNmI1MWViYmUwZDkxMjRhMWQ3N2E1NzAxNDYwYmVjMSJ9fX0="
+    craft-cost: 100
+    level-costs: [150, 300, 600, 1200]
+    abilities:
+      1:
+        - description: "25% fall damage reduction"
+          type: PASSIVE
+          effect: DAMAGE_REDUCTION
+          damage-type: FALL
+          value: 25
+      2:
+        - description: "50% fall damage reduction"
+          type: PASSIVE
+          effect: DAMAGE_REDUCTION
+          damage-type: FALL
+          value: 50
+      3:
+        - description: "75% fall damage reduction"
+          type: PASSIVE
+          effect: DAMAGE_REDUCTION
+          damage-type: FALL
+          value: 75
+      4:
+        - description: "90% fall damage reduction"
+          type: PASSIVE
+          effect: DAMAGE_REDUCTION
+          damage-type: FALL
+          value: 90
+      5:
+        - description: "Immune to fall damage"
+          type: PASSIVE
+          effect: DAMAGE_REDUCTION
+          damage-type: FALL
+          value: 100
+  
+  wolf:
+    display-name: "Wolf Mask"
+    tier: RANKUP
+    associated-level: 4
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGViNDFlMzA5ZDgyOTUyZjVmNGE5MDhiZjE2OGU4NDhjODE3NmU1ZjA0ODdlNTc2YmMzMjE5ZWQwNjQ0ZTZlNyJ9fX0="
+    craft-cost: 125
+    level-costs: [225, 450, 900, 1800]
+    abilities:
+      1:
+        - description: "Spawn 2 wolves on hit"
+          type: ON_HIT
+          effect: SPAWN_MINIONS
+          mob-type: WOLF
+          count: 2
+          chance: 10
+          duration: 30
+      2:
+        - description: "Spawn 3 wolves on hit"
+          type: ON_HIT
+          effect: SPAWN_MINIONS
+          mob-type: WOLF
+          count: 3
+          chance: 12
+          duration: 30
+      3:
+        - description: "Spawn 4 wolves on hit"
+          type: ON_HIT
+          effect: SPAWN_MINIONS
+          mob-type: WOLF
+          count: 4
+          chance: 15
+          duration: 30
+      4:
+        - description: "Spawn 6 wolves on hit"
+          type: ON_HIT
+          effect: SPAWN_MINIONS
+          mob-type: WOLF
+          count: 6
+          chance: 18
+          duration: 30
+      5:
+        - description: "Spawn 8 wolves on hit"
+          type: ON_HIT
+          effect: SPAWN_MINIONS
+          mob-type: WOLF
+          count: 8
+          chance: 20
+          duration: 30
+  
+  rabbit:
+    display-name: "Rabbit Mask"
+    tier: RANKUP
+    associated-level: 5
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UxNjlhZjlmNzNlZjAwZGNlMGRlZGY3NTBlNDgyMTk3ZTRlZDVlNDVmMWFlZGVlMjVlOTExNTVhZmUwZTFiZCJ9fX0="
+    craft-cost: 150
+    level-costs: [300, 600, 1200, 2400]
+    abilities:
+      1:
+        - description: "Jump Boost I"
+          type: PASSIVE
+          effect: POTION
+          potion-type: JUMP
+          amplifier: 0
+          duration: -1
+      2:
+        - description: "Jump Boost I (improved)"
+          type: PASSIVE
+          effect: POTION
+          potion-type: JUMP
+          amplifier: 0
+          duration: -1
+      3:
+        - description: "Jump Boost II"
+          type: PASSIVE
+          effect: POTION
+          potion-type: JUMP
+          amplifier: 1
+          duration: -1
+      4:
+        - description: "Jump Boost II (improved)"
+          type: PASSIVE
+          effect: POTION
+          potion-type: JUMP
+          amplifier: 1
+          duration: -1
+      5:
+        - description: "Jump Boost III"
+          type: PASSIVE
+          effect: POTION
+          potion-type: JUMP
+          amplifier: 2
+          duration: -1
+  
+  horse:
+    display-name: "Horse Mask"
+    tier: RANKUP
+    associated-level: 6
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmYxNGQ3OWIwMmU3MzgyZjM1ZWJjMjViOTNkNTY0ZDIzMjdjMTAyZDk1NWI1ZTEzMmI4YzZkYTEwNWFiOGQzZCJ9fX0="
+    craft-cost: 200
+    level-costs: [450, 900, 1800, 3600]
+    abilities:
+      1:
+        - description: "Speed I"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 0
+          duration: -1
+      2:
+        - description: "Speed I (improved)"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 0
+          duration: -1
+      3:
+        - description: "Speed II"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 1
+          duration: -1
+      4:
+        - description: "Speed II (improved)"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 1
+          duration: -1
+      5:
+        - description: "Speed III"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 2
+          duration: -1
+  
+  cow:
+    display-name: "Cow Mask"
+    tier: RANKUP
+    associated-level: 7
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWI2MzQ3ZDM2N2Q5OWIyMjEzMWZmYWIxYWVkODcwMmMyOWM2NTNhZjI5ZGE1ZWQ2ZmQxNjQzMDY3NGI5ODFmOCJ9fX0="
+    craft-cost: 250
+    level-costs: [525, 1050, 2100, 4200]
+    abilities:
+      1:
+        - description: "Chance to cleanse debuffs"
+          type: ON_DAMAGED
+          effect: SPECIAL
+          special-id: DEBUFF_CLEANSE
+          chance: 10
+      2:
+        - description: "Increased cleanse chance"
+          type: ON_DAMAGED
+          effect: SPECIAL
+          special-id: DEBUFF_CLEANSE
+          chance: 15
+      3:
+        - description: "Increased cleanse chance"
+          type: ON_DAMAGED
+          effect: SPECIAL
+          special-id: DEBUFF_CLEANSE
+          chance: 20
+      4:
+        - description: "Deal more damage with debuffs"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: DEBUFF_DAMAGE_BOOST
+          value: 15
+      5:
+        - description: "Immune to blindness and nausea"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: DEBUFF_IMMUNITY
+          debuffs: [BLINDNESS, CONFUSION]
+  
+  spider:
+    display-name: "Spider Mask"
+    tier: RANKUP
+    associated-level: 8
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzg3YTk2YThjMjNiODNiMzJhNzNkZjA1MWY2Yjg0YzJlZjI0ZDI1YmE0MTkwZGJlNzRmMTExMzg2MjliNWFlZiJ9fX0="
+    craft-cost: 300
+    level-costs: [600, 1200, 2400, 4800]
+    abilities:
+      1:
+        - description: "Chance to give Slowness I"
+          type: ON_HIT
+          effect: POTION
+          potion-type: SLOW
+          amplifier: 0
+          duration: 100
+          chance: 15
+      2:
+        - description: "Chance to give Mining Fatigue I"
+          type: ON_HIT
+          effect: POTION
+          potion-type: SLOW_DIGGING
+          amplifier: 0
+          duration: 100
+          chance: 15
+      3:
+        - description: "Chance to give Slowness II"
+          type: ON_HIT
+          effect: POTION
+          potion-type: SLOW
+          amplifier: 1
+          duration: 100
+          chance: 20
+      4:
+        - description: "Chance to freeze enemies"
+          type: ON_HIT
+          effect: SPECIAL
+          special-id: FREEZE
+          duration: 40
+          chance: 10
+      5:
+        - description: "Immune to slowness"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: DEBUFF_IMMUNITY
+          debuffs: [SLOW]
+  
+  skeleton:
+    display-name: "Skeleton Mask"
+    tier: RANKUP
+    associated-level: 9
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDgyYjc4ZGE2ZWU3MTNkNWFjZmU1ZmNiMDc1NGVlNTY5MDA4MzFhNTA5ODMxMzA2NDEwOGRlNmU3ZTQwNjgzOSJ9fX0="
+    craft-cost: 350
+    level-costs: [750, 1500, 3000, 6000]
+    abilities:
+      1:
+        - description: "Bow shots give random debuff"
+          type: ON_HIT
+          effect: SPECIAL
+          special-id: BOW_RANDOM_DEBUFF
+          chance: 20
+          requires-bow: true
+      2:
+        - description: "Increased debuff chance"
+          type: ON_HIT
+          effect: SPECIAL
+          special-id: BOW_RANDOM_DEBUFF
+          chance: 30
+          requires-bow: true
+      3:
+        - description: "Increased debuff chance"
+          type: ON_HIT
+          effect: SPECIAL
+          special-id: BOW_RANDOM_DEBUFF
+          chance: 40
+          requires-bow: true
+      4:
+        - description: "Bow shots deal 1.5x damage"
+          type: ON_HIT
+          effect: DAMAGE_MULTIPLIER
+          value: 1.5
+          requires-bow: true
+      5:
+        - description: "Bow shots deal 2x damage"
+          type: ON_HIT
+          effect: DAMAGE_MULTIPLIER
+          value: 2.0
+          requires-bow: true
+  
+  enderman:
+    display-name: "Enderman Mask"
+    tier: RANKUP
+    associated-level: 10
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTlkMjJhY2M1YWE4MGNkOTZiOTdiYTY4YjFkNjc2NDAzMGQ4NzAzNmU2MDVkMGIyMTUzOGVlNjIzOWYxZjQxNCJ9fX0="
+    craft-cost: 400
+    level-costs: [900, 1800, 3600, 7200]
+    abilities:
+      1:
+        - description: "No ender pearl damage"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: NO_PEARL_DAMAGE
+      2:
+        - description: "Chance for invisibility on pearl"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: PEARL_INVIS
+          chance: 25
+          duration: 100
+      3:
+        - description: "Pearl cooldown reduced 20%"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: PEARL_COOLDOWN_REDUCTION
+          value: 20
+      4:
+        - description: "Speed IV and Absorption when low"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: LOW_HEALTH_BOOST
+          health-threshold: 6
+      5:
+        - description: "Pearl cooldown reduced 40%"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: PEARL_COOLDOWN_REDUCTION
+          value: 40
+  
+  guardian:
+    display-name: "Guardian Mask"
+    tier: RANKUP
+    associated-level: 11
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjIxMDI1NDM0MDQ1YmRhNzAyNWIzZTUxNGIzMTZhNGI3NzBjNmZhYTRiYTlhZGI0YmUzODA5NTI2ZGI3N2Y5ZCJ9fX0="
+    craft-cost: 500
+    level-costs: [1200, 2400, 4800, 9600]
+    abilities:
+      1:
+        - description: "Better warzone fishing rewards"
+          type: ON_FISH
+          effect: SPECIAL
+          special-id: FISHING_LUCK
+          value: 10
+      2:
+        - description: "Thorns effect when hit"
+          type: ON_DAMAGED
+          effect: SPECIAL
+          special-id: THORNS
+          chance: 15
+          damage: 1
+      3:
+        - description: "Give Slowness and Mining Fatigue"
+          type: ON_HIT
+          effect: SPECIAL
+          special-id: GUARDIAN_DEBUFF
+          chance: 20
+      4:
+        - description: "Regen I near warzone lake"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: LAKE_REGEN
+      5:
+        - description: "Access to mask fishing rewards"
+          type: ON_FISH
+          effect: SPECIAL
+          special-id: MASK_FISHING_REWARDS
+  
+  blaze:
+    display-name: "Blaze Mask"
+    tier: RANKUP
+    associated-level: 12
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2QyYTViNGIxMDliZDc4OGVkYmEwMTcxZDBhYWI4YTU1MzA1YWMyZjU2MTg0ZGY3MGEzMTljZDQ4OGEzNmMzZSJ9fX0="
+    craft-cost: 600
+    level-costs: [1500, 3000, 6000, 12000]
+    abilities:
+      1:
+        - description: "Chance for extra mob drops"
+          type: ON_KILL
+          effect: BONUS_DROPS
+          chance: 15
+          multiplier: 2
+      2:
+        - description: "Increased extra drop chance"
+          type: ON_KILL
+          effect: BONUS_DROPS
+          chance: 25
+          multiplier: 2
+      3:
+        - description: "Chance to preserve stack"
+          type: ON_KILL
+          effect: SPECIAL
+          special-id: PRESERVE_STACK
+          chance: 10
+      4:
+        - description: "Increased preserve chance"
+          type: ON_KILL
+          effect: SPECIAL
+          special-id: PRESERVE_STACK
+          chance: 20
+      5:
+        - description: "Chance to instant kill stack"
+          type: ON_KILL
+          effect: SPECIAL
+          special-id: INSTANT_STACK_KILL
+          chance: 5
+  
+  villager:
+    display-name: "Villager Mask"
+    tier: RANKUP
+    associated-level: 13
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTUxYTE4YjJkNDM3ZWFmNjc0ZTc1YmM0OGE2MDFjNDJmMGRhNDkwNjBlZWRlMjE4MmEwYmJjYzVjYmY3ZjQyZiJ9fX0="
+    craft-cost: 750
+    level-costs: [1800, 3600, 7200, 14400]
+    abilities:
+      1:
+        - description: "Chance for 1.5x XP"
+          type: ON_KILL
+          effect: BONUS_XP
+          chance: 30
+          multiplier: 1.5
+      2:
+        - description: "Increased XP chance"
+          type: ON_KILL
+          effect: BONUS_XP
+          chance: 40
+          multiplier: 1.5
+      3:
+        - description: "Chance for 2x XP"
+          type: ON_KILL
+          effect: BONUS_XP
+          chance: 30
+          multiplier: 2.0
+      4:
+        - description: "Chance for extra head"
+          type: ON_KILL
+          effect: SPECIAL
+          special-id: BONUS_HEAD
+          chance: 15
+      5:
+        - description: "Increased extra head chance"
+          type: ON_KILL
+          effect: SPECIAL
+          special-id: BONUS_HEAD
+          chance: 25
+  
+  wither_skeleton:
+    display-name: "Wither Skeleton Mask"
+    tier: RANKUP
+    associated-level: 14
+    essence-only: true
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODg2ZGMwY2ZjYWVlY2ZlMWFiNjkxNDZlNGQ0ZjExOTA4MzcwNzZhNjdkZWMxMzVmYWJkYTYyNzFmMzc1ZDAxZiJ9fX0="
+    craft-cost: 1000
+    level-costs: [2400, 4800, 9600, 19200]
+    abilities:
+      1:
+        - description: "Chance to give Wither I"
+          type: ON_HIT
+          effect: POTION
+          potion-type: WITHER
+          amplifier: 0
+          duration: 100
+          chance: 20
+      2:
+        - description: "Bow shots give Wither I"
+          type: ON_HIT
+          effect: POTION
+          potion-type: WITHER
+          amplifier: 0
+          duration: 100
+          chance: 20
+          requires-bow: true
+      3:
+        - description: "Chance to give Wither II"
+          type: ON_HIT
+          effect: POTION
+          potion-type: WITHER
+          amplifier: 1
+          duration: 100
+          chance: 25
+      4:
+        - description: "Permanent Strength I, Wither immune"
+          type: PASSIVE
+          effect: POTION
+          potion-type: INCREASE_DAMAGE
+          amplifier: 0
+          duration: -1
+      5:
+        - description: "Permanent Strength II"
+          type: PASSIVE
+          effect: POTION
+          potion-type: INCREASE_DAMAGE
+          amplifier: 1
+          duration: -1
+
+  # ============================================
+  # DIVINE MASKS (6)
+  # ============================================
+  
+  iron_golem:
+    display-name: "Iron Golem Mask"
+    tier: DIVINE
+    essence-only: true
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGE2ZTA0MjljY2FhYmI2ZjVmMGM1ZDUxM2M3OTViZWQ2ZDgwZmNlNzJmNTdmNGJjM2E2MTZhZWUyM2UxMjU3MiJ9fX0="
+    craft-cost: 2000
+    level-costs: [4500, 9000, 18000, 36000]
+    mission: "iron_golem_mission"
+    abilities:
+      1:
+        - description: "+2 Hearts"
+          type: PASSIVE
+          effect: HEALTH_BOOST
+          value: 4
+      2:
+        - description: "+3 Hearts"
+          type: PASSIVE
+          effect: HEALTH_BOOST
+          value: 6
+      3:
+        - description: "+4 Hearts"
+          type: PASSIVE
+          effect: HEALTH_BOOST
+          value: 8
+      4:
+        - description: "+5 Hearts"
+          type: PASSIVE
+          effect: HEALTH_BOOST
+          value: 10
+      5:
+        - description: "+6 Hearts"
+          type: PASSIVE
+          effect: HEALTH_BOOST
+          value: 12
+  
+  skeleton_horse:
+    display-name: "Skeleton Horse Mask"
+    tier: DIVINE
+    essence-only: true
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWM3ZDhhMTZkM2YwZjk4YjU5OGRmOTNmMmMyZDM0ZTc1MTcxY2Q1MmRiZjRhMTIxMWQ3Yjg0YzAxOTQxNmE0MCJ9fX0="
+    craft-cost: 2500
+    level-costs: [6000, 12000, 24000, 48000]
+    mission: "skeleton_horse_mission"
+    abilities:
+      1:
+        - description: "Speed II"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 1
+          duration: -1
+      2:
+        - description: "Speed III"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 2
+          duration: -1
+      3:
+        - description: "Speed III"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 2
+          duration: -1
+      4:
+        - description: "Speed III"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 2
+          duration: -1
+        - description: "Speed IV + Absorption when low HP"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: SKELETON_HORSE_PASSIVE
+      5:
+        - description: "Speed IV"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 3
+          duration: -1
+        - description: "Speed V + Absorption when low HP"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: SKELETON_HORSE_PASSIVE_MAX
+  
+  undead_horse:
+    display-name: "Undead Horse Mask"
+    tier: DIVINE
+    essence-only: true
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDIyOTUwZjJkM2VmZGRiMThkZTg2ZjhmNTVhYzUxOGRjZTczZjEyYTZlMGY4NjM2ZDU1MWQ4ZWI0ODBjZWVjIn19fQ=="
+    craft-cost: 2500
+    level-costs: [6000, 12000, 24000, 48000]
+    mission: "undead_horse_mission"
+    abilities:
+      1:
+        - description: "Speed II"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 1
+          duration: -1
+      2:
+        - description: "Chance to give Slowness V"
+          type: ON_HIT
+          effect: POTION
+          potion-type: SLOW
+          amplifier: 4
+          duration: 60
+          chance: 15
+      3:
+        - description: "Speed III"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 2
+          duration: -1
+      4:
+        - description: "Increased Slowness chance"
+          type: ON_HIT
+          effect: POTION
+          potion-type: SLOW
+          amplifier: 4
+          duration: 60
+          chance: 25
+      5:
+        - description: "Chance to remove regen"
+          type: ON_HIT
+          effect: SPECIAL
+          special-id: STRIP_REGEN
+          chance: 20
+  
+  wither:
+    display-name: "Wither Mask"
+    tier: DIVINE
+    essence-only: true
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWJlY2RmOTc0N2JjZDcxZTBkZmU3N2E1NmMyMGRjOTk1ODNmMjQ1ZTQ2OWM4M2Y4NGJkMTk1ZWM2ZTJkM2VlMiJ9fX0="
+    craft-cost: 5000
+    level-costs: [12000, 24000, 48000, 96000]
+    mission: "wither_mission"
+    abilities:
+      1:
+        - description: "Wither immune, Wither I on hit"
+          type: ON_HIT
+          effect: POTION
+          potion-type: WITHER
+          amplifier: 0
+          duration: 100
+          chance: 30
+      2:
+        - description: "Wither II on hit"
+          type: ON_HIT
+          effect: POTION
+          potion-type: WITHER
+          amplifier: 1
+          duration: 100
+          chance: 35
+      3:
+        - description: "Health Boost II (+4 Hearts)"
+          type: PASSIVE
+          effect: HEALTH_BOOST
+          value: 8
+      4:
+        - description: "Permanent Strength II"
+          type: PASSIVE
+          effect: POTION
+          potion-type: INCREASE_DAMAGE
+          amplifier: 1
+          duration: -1
+      5:
+        - description: "Health Boost IV (+8 Hearts)"
+          type: PASSIVE
+          effect: HEALTH_BOOST
+          value: 16
+  
+  ender_dragon:
+    display-name: "Ender Dragon Mask"
+    tier: DIVINE
+    essence-only: true
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjhhYTNjNTNlNDY3NTIzYzZjM2Q4MzNiYmJlZTM3YTY2ZmMxNGYzMDUzMGYzOWE2YTljMDQ1N2ZmZTgwNWMyNSJ9fX0="
+    craft-cost: 5000
+    level-costs: [12000, 24000, 48000, 96000]
+    mission: "ender_dragon_mission"
+    abilities:
+      1:
+        - description: "Immune to Weakness & Slowness"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: DEBUFF_IMMUNITY
+          debuffs: [WEAKNESS, SLOW]
+      2:
+        - description: "Chance to give Slowness I"
+          type: ON_HIT
+          effect: POTION
+          potion-type: SLOW
+          amplifier: 0
+          duration: 100
+          chance: 25
+      3:
+        - description: "Health Boost II (+4 Hearts)"
+          type: PASSIVE
+          effect: HEALTH_BOOST
+          value: 8
+      4:
+        - description: "Permanent Speed II"
+          type: PASSIVE
+          effect: POTION
+          potion-type: SPEED
+          amplifier: 1
+          duration: -1
+      5:
+        - description: "Health Boost IV (+8 Hearts)"
+          type: PASSIVE
+          effect: HEALTH_BOOST
+          value: 16
+  
+  elder_guardian:
+    display-name: "Elder Guardian Mask"
+    tier: DIVINE
+    essence-only: true
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGRmNGZlYzNhYTM0Y2VkZGIwMjVhNDJjOWZjNDM1YTgwMjliMDYyNTk4YjMyNTMyMmJhM2NiNWU1ZjM1MWMxZiJ9fX0="
+    craft-cost: 3000
+    level-costs: [7500, 15000, 30000, 60000]
+    mission: "elder_guardian_mission"
+    abilities:
+      1:
+        - description: "Best fishing luck, Water Breathing"
+          type: PASSIVE
+          effect: SPECIAL
+          special-id: ELDER_FISHING
+      2:
+        - description: "Thorns effect when hit"
+          type: ON_DAMAGED
+          effect: SPECIAL
+          special-id: THORNS
+          chance: 25
+          damage: 2
+      3:
+        - description: "Give Slowness & Fatigue III"
+          type: ON_HIT
+          effect: SPECIAL
+          special-id: ELDER_DEBUFF
+          chance: 25
+      4:
+        - description: "Fire Resistance"
+          type: PASSIVE
+          effect: POTION
+          potion-type: FIRE_RESISTANCE
+          amplifier: 0
+          duration: -1
+      5:
+        - description: "Strip buffs from enemies"
+          type: ON_HIT
+          effect: SPECIAL
+          special-id: STRIP_BUFFS
+          chance: 15
+
+# Display settings for masks
+display:
+  # Level colors
+  level-colors:
+    1: "&7"
+    2: "&a"
+    3: "&b"
+    4: "&d"
+    5: "&6"
+  
+  # Level symbols
+  level-symbols:
+    1: "❶"
+    2: "❷"
+    3: "❸"
+    4: "❹"
+    5: "❺"
+  
+  # Divine mask prefix
+  divine-prefix: "&5⚜ "
+  divine-suffix: " &5⚜"
+  
+  # Max level indicator
+  max-indicator: " &e&lMAX"
+  
+  # Lore format
+  lore:
+    header: "&8━━━━━━━━━━━━━━━━━"
+    ability-unlocked: "&a✔ &7{description}"
+    ability-locked: "&8✖ &8{description}"
+    footer: "&8━━━━━━━━━━━━━━━━━"
+    divine-tag: "&5✦ DIVINE MASK ✦"
+    equip-hint: "&8Right-click to equip"

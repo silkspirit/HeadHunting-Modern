@@ -1,0 +1,116 @@
+name: HeadHunting
+version: ${project.version}
+main: com.headhunting.HeadHunting
+author: Johann
+description: A comprehensive mob head progression system with masks, levels, and abilities.
+api-version: 1.8
+
+depend:
+  - Vault
+
+softdepend:
+  - PlaceholderAPI
+  - FactionsKore
+  - Factions
+  - LuckPerms
+  - ShopGUIPlus
+  - PhoenixCrates
+  - WarzoneFishing
+  - HolographicDisplays
+  - WorldGuard
+
+commands:
+  level:
+    description: View your headhunting level and progress
+    usage: /<command> [top|up]
+    permission: headhunting.use
+    aliases: [levelup, rankup]
+  hunter:
+    description: View progression roadmap
+    usage: /<command> [player]
+    permission: headhunting.use
+    aliases: [progression, hhroadmap]
+  bulksell:
+    description: Toggle bulk sell mode (punch chests to sell all heads)
+    usage: /<command>
+    permission: headhunting.use
+  bulkdeposit:
+    description: Toggle bulk deposit mode (punch chests to deposit all heads)
+    usage: /<command>
+    permission: headhunting.use
+  masks:
+    description: View your mask collection
+    usage: /<command>
+    permission: headhunting.use
+  deposit:
+    description: Open the mask crafting and leveling GUI
+    usage: /<command>
+    permission: headhunting.use
+  missions:
+    description: View divine missions and progress
+    usage: /<command>
+    permission: headhunting.use
+  hhbar:
+    description: Toggle the HeadHunting progress bar
+    usage: /<command>
+    permission: headhunting.use
+    aliases: [hhlevelbar, hhprogress]
+  hunt:
+    description: Admin commands for HeadHunting
+    usage: /<command> <reload|setlevel|givemask|givehead|giveessence>
+    permission: headhunting.admin
+    aliases: [headhunting]
+  headcollector:
+    description: Admin commands for Head Collector
+    usage: /<command> give <player> [amount]
+    permission: headhunting.collector.admin
+  spawners:
+    description: Open the Spawner Shop
+    usage: /<command>
+    permission: headhunting.spawnershop
+    aliases: [spawnershop]
+  spawnershop:
+    description: Open the Spawner Shop
+    usage: /<command>
+    permission: headhunting.spawnershop
+
+permissions:
+  headhunting.use:
+    description: Access to basic HeadHunting commands
+    default: true
+  headhunting.fish:
+    description: Ability to use warzone fishing
+    default: true
+  headhunting.admin:
+    description: Access to admin HeadHunting commands
+    default: op
+  headhunting.collector.use:
+    description: Allows placing, breaking, and using Head Collectors
+    default: true
+  headhunting.collector.admin:
+    description: Allows /headcollector admin commands
+    default: op
+  headhunting.spawnershop:
+    description: Access to the Spawner Shop (/spawners, /spawnershop)
+    default: true
+  headhunting.spawnershop.bypass:
+    description: Bypass HeadHunting level requirements in Spawner Shop
+    default: op
+  headhunting.level.*:
+    description: All level permissions
+    default: false
+    children:
+      headhunting.level.1: true
+      headhunting.level.2: true
+      headhunting.level.3: true
+      headhunting.level.4: true
+      headhunting.level.5: true
+      headhunting.level.6: true
+      headhunting.level.7: true
+      headhunting.level.8: true
+      headhunting.level.9: true
+      headhunting.level.10: true
+      headhunting.level.11: true
+      headhunting.level.12: true
+      headhunting.level.13: true
+      headhunting.level.14: true

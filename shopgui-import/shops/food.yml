@@ -1,0 +1,244 @@
+# ============================================
+# FOOD SHOP - All edible items
+# Multiple stack sizes for easy selling
+# ============================================
+food:
+  name: "&2&lFood (page %page%)"
+  fillItem:
+    material: STAINED_GLASS_PANE
+    damage: 5
+    name: " "
+  items:
+    # ============ Row 1 - Cooked Meats (Best Food) ============
+    1:
+      type: item
+      item:
+        material: COOKED_BEEF
+        quantity: 64
+      buyPrice: 128
+      sellPrice: 16
+      slot: 10
+    2:
+      type: item
+      item:
+        material: COOKED_BEEF
+        quantity: 32
+      buyPrice: 64
+      sellPrice: 8
+      slot: 11
+    3:
+      type: item
+      item:
+        material: GRILLED_PORK
+        quantity: 64
+      buyPrice: 128
+      sellPrice: 16
+      slot: 12
+    4:
+      type: item
+      item:
+        material: GRILLED_PORK
+        quantity: 32
+      buyPrice: 64
+      sellPrice: 8
+      slot: 13
+    5:
+      type: item
+      item:
+        material: COOKED_CHICKEN
+        quantity: 64
+      buyPrice: 112
+      sellPrice: 14
+      slot: 14
+    6:
+      type: item
+      item:
+        material: COOKED_MUTTON
+        quantity: 64
+      buyPrice: 112
+      sellPrice: 14
+      slot: 15
+    7:
+      type: item
+      item:
+        material: COOKED_RABBIT
+        quantity: 64
+      buyPrice: 128
+      sellPrice: 16
+      slot: 16
+
+    # ============ Row 2 - Fish & Bread ============
+    8:
+      type: item
+      item:
+        material: COOKED_FISH
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 19
+    9:
+      type: item
+      item:
+        material: COOKED_FISH
+        quantity: 32
+      buyPrice: 48
+      sellPrice: 6
+      slot: 20
+    10:
+      type: item
+      item:
+        material: COOKED_FISH
+        quantity: 64
+        damage: 1
+      buyPrice: 112
+      sellPrice: 14
+      slot: 21
+    11:
+      type: item
+      item:
+        material: BREAD
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 22
+    12:
+      type: item
+      item:
+        material: BREAD
+        quantity: 32
+      buyPrice: 48
+      sellPrice: 6
+      slot: 23
+    13:
+      type: item
+      item:
+        material: BAKED_POTATO
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 24
+    14:
+      type: item
+      item:
+        material: BAKED_POTATO
+        quantity: 32
+      buyPrice: 48
+      sellPrice: 6
+      slot: 25
+
+    # ============ Row 3 - Fruits & Vegetables ============
+    15:
+      type: item
+      item:
+        material: APPLE
+        quantity: 64
+      buyPrice: 96
+      sellPrice: 12
+      slot: 28
+    16:
+      type: item
+      item:
+        material: APPLE
+        quantity: 32
+      buyPrice: 48
+      sellPrice: 6
+      slot: 29
+    17:
+      type: item
+      item:
+        material: CARROT_ITEM
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 30
+    18:
+      type: item
+      item:
+        material: MELON
+        quantity: 64
+      buyPrice: 64
+      sellPrice: 8
+      slot: 31
+    19:
+      type: item
+      item:
+        material: COOKIE
+        quantity: 64
+      buyPrice: 80
+      sellPrice: 10
+      slot: 32
+    20:
+      type: item
+      item:
+        material: PUMPKIN_PIE
+        quantity: 16
+      buyPrice: 80
+      sellPrice: 10
+      slot: 33
+    21:
+      type: item
+      item:
+        material: CAKE
+        quantity: 1
+      buyPrice: 100
+      sellPrice: 12
+      slot: 34
+
+    # ============ Row 4 - Golden Food & Special ============
+    22:
+      type: item
+      item:
+        material: GOLDEN_CARROT
+        quantity: 64
+      buyPrice: 640
+      sellPrice: 80
+      slot: 37
+    23:
+      type: item
+      item:
+        material: GOLDEN_CARROT
+        quantity: 32
+      buyPrice: 320
+      sellPrice: 40
+      slot: 38
+    24:
+      type: item
+      item:
+        material: GOLDEN_APPLE
+        quantity: 16
+      buyPrice: 3200
+      sellPrice: 400
+      slot: 39
+    25:
+      type: item
+      item:
+        material: GOLDEN_APPLE
+        quantity: 1
+      buyPrice: 200
+      sellPrice: 25
+      slot: 40
+    26:
+      type: item
+      item:
+        material: GOLDEN_APPLE
+        quantity: 1
+        damage: 1
+      buyPrice: 7500
+      sellPrice: 1000
+      slot: 41
+    27:
+      type: item
+      item:
+        material: MUSHROOM_SOUP
+        quantity: 1
+      buyPrice: 50
+      sellPrice: 6
+      slot: 42
+    28:
+      type: item
+      item:
+        material: RABBIT_STEW
+        quantity: 1
+      buyPrice: 75
+      sellPrice: 10
+      slot: 43
