@@ -3,7 +3,7 @@ version: ${project.version}
 main: com.headhunting.HeadHunting
 author: Johann
 description: A comprehensive mob head progression system with masks, levels, and abilities.
-api-version: 1.8
+api-version: 1.20
 
 depend:
   - Vault
