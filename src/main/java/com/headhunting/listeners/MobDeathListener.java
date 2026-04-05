@@ -59,7 +59,12 @@ public class MobDeathListener implements Listener {
         // Calculate drop chance
         double baseChance = headConfig.getDropChance();
         double multiplier = plugin.getConfigManager().getDropRateMultiplier();
-        
+
+        // Apply warzone multiplier if factions integration is enabled
+        if (plugin.getConfigManager().isFactionsEnabled() && isInWarzone(entity)) {
+            multiplier *= plugin.getConfigManager().getWarzoneDropMultiplier();
+        }
+
         double finalChance = baseChance * multiplier;
         
         // Check for stacked mobs
@@ -135,7 +140,36 @@ public class MobDeathListener implements Listener {
     private String resolveHeadKey(LivingEntity entity, EntityType type) {
         return type.name();
     }
-    
+
+    /**
+     * Check if entity is in warzone (Factions integration, only called when enabled)
+     */
+    private boolean isInWarzone(LivingEntity entity) {
+        try {
+            Class<?> boardClass = Class.forName("com.massivecraft.factions.Board");
+            Object board = boardClass.getMethod("getInstance").invoke(null);
+
+            Class<?> flocationClass = Class.forName("com.massivecraft.factions.FLocation");
+            Object flocation = flocationClass.getConstructor(org.bukkit.Location.class)
+                .newInstance(entity.getLocation());
+
+            Object faction = boardClass.getMethod("getFactionAt", flocationClass).invoke(board, flocation);
+            if (faction != null) {
+                try {
+                    Boolean isWarzone = (Boolean) faction.getClass().getMethod("isWarZone").invoke(faction);
+                    if (isWarzone != null && isWarzone) return true;
+                } catch (NoSuchMethodException e) {
+                    // Fall through
+                }
+                String tag = (String) faction.getClass().getMethod("getTag").invoke(faction);
+                if (tag != null && tag.toLowerCase().contains("warzone")) return true;
+            }
+        } catch (Exception e) {
+            // Factions not available
+        }
+        return false;
+    }
+
     /**
      * Get stack size of entity (Stacker plugin integration).
      * Checks metadata keys first (reliable), then falls back to display name parsing.

@@ -16,6 +16,7 @@ levels:
     xp-required: 0
     money-cost: 0
     mob-type: PIG
+    spawner-unlock: PIG
     rewards: []
 
   2:
@@ -23,6 +24,7 @@ levels:
     xp-required: 500
     money-cost: 25000
     mob-type: SHEEP
+    spawner-unlock: SHEEP
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &eSheep &7heads!"
 
@@ -31,6 +33,7 @@ levels:
     xp-required: 1200
     money-cost: 50000
     mob-type: CHICKEN
+    spawner-unlock: CHICKEN
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &eChicken &7heads!"
 
@@ -44,6 +47,7 @@ levels:
     xp-required: 2500
     money-cost: 100000
     mob-type: ZOMBIE
+    spawner-unlock: ZOMBIE
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &2Zombie &7heads!"
 
@@ -52,6 +56,7 @@ levels:
     xp-required: 4500
     money-cost: 200000
     mob-type: CREEPER
+    spawner-unlock: CREEPER
     rewards:
       - "msg {player} &a&lBASIC COMPLETE! &7You unlocked &aCreeper &7heads!"
       - "give {player} DIAMOND 3"
@@ -61,6 +66,7 @@ levels:
     xp-required: 7500
     money-cost: 400000
     mob-type: COW
+    spawner-unlock: COW
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &fCow &7heads!"
 
@@ -74,6 +80,7 @@ levels:
     xp-required: 12000
     money-cost: 750000
     mob-type: SPIDER
+    spawner-unlock: SPIDER
     rewards:
       - "msg {player} &9&lADVANCED TIER! &7You unlocked &8Spider &7heads!"
 
@@ -82,6 +89,7 @@ levels:
     xp-required: 18000
     money-cost: 1250000
     mob-type: SKELETON
+    spawner-unlock: SKELETON
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &fSkeleton &7heads!"
 
@@ -90,6 +98,7 @@ levels:
     xp-required: 27000
     money-cost: 2000000
     mob-type: CAVE_SPIDER
+    spawner-unlock: CAVE_SPIDER
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &8Cave Spider &7heads!"
       - "give {player} DIAMOND 5"
@@ -104,6 +113,7 @@ levels:
     xp-required: 40000
     money-cost: 4000000
     mob-type: BLAZE
+    spawner-unlock: BLAZE
     rewards:
       - "msg {player} &6&lEXTREME TIER! &7You unlocked &6Blaze &7heads!"
 
@@ -112,6 +122,7 @@ levels:
     xp-required: 60000
     money-cost: 7500000
     mob-type: ENDERMAN
+    spawner-unlock: ENDERMAN
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &5Enderman &7heads!"
 
@@ -120,6 +131,7 @@ levels:
     xp-required: 85000
     money-cost: 12000000
     mob-type: IRON_GOLEM
+    spawner-unlock: IRON_GOLEM
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &7Iron Golem &7heads!"
       - "give {player} DIAMOND 10"
@@ -129,6 +141,7 @@ levels:
     xp-required: 120000
     money-cost: 20000000
     mob-type: VILLAGER
+    spawner-unlock: VILLAGER
     rewards:
       - "msg {player} &5&lDIVINE TIER! &7You unlocked &aVillager &7heads!"
 
@@ -137,6 +150,7 @@ levels:
     xp-required: 165000
     money-cost: 35000000
     mob-type: WITCH
+    spawner-unlock: WITCH
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &dWitch &7heads!"
       - "give {player} DIAMOND_BLOCK 3"
@@ -151,6 +165,7 @@ levels:
     xp-required: 220000
     money-cost: 50000000
     mob-type: PHANTOM
+    spawner-unlock: PHANTOM
     rewards:
       - "msg {player} &c&lMASTER TIER! &7You unlocked &5Phantom &7heads!"
       - "give {player} DIAMOND_BLOCK 5"
@@ -160,6 +175,7 @@ levels:
     xp-required: 290000
     money-cost: 70000000
     mob-type: PILLAGER
+    spawner-unlock: PILLAGER
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &4Pillager &7heads!"
       - "give {player} EMERALD_BLOCK 5"
@@ -169,6 +185,7 @@ levels:
     xp-required: 380000
     money-cost: 100000000
     mob-type: PIGLIN_BRUTE
+    spawner-unlock: PIGLIN_BRUTE
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &6Piglin Brute &7heads!"
       - "give {player} NETHERITE_INGOT 2"
@@ -183,6 +200,7 @@ levels:
     xp-required: 500000
     money-cost: 150000000
     mob-type: SHULKER
+    spawner-unlock: SHULKER
     rewards:
       - "msg {player} &d&lLEGENDARY TIER! &7You unlocked &dShulker &7heads!"
       - "give {player} NETHERITE_INGOT 4"
@@ -192,6 +210,7 @@ levels:
     xp-required: 650000
     money-cost: 200000000
     mob-type: RAVAGER
+    spawner-unlock: RAVAGER
     rewards:
       - "msg {player} &b&lLEVEL UP! &7You unlocked &4Ravager &7heads!"
       - "give {player} NETHERITE_INGOT 6"
@@ -202,6 +221,7 @@ levels:
     xp-required: 850000
     money-cost: 300000000
     mob-type: WARDEN
+    spawner-unlock: WARDEN
     rewards:
       - "msg {player} &6&lMAX LEVEL! &7You are a &5&lHeadHunting Legend!"
       - "give {player} NETHERITE_BLOCK 2"

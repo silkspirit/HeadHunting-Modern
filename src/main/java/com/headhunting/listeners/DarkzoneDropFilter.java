@@ -28,8 +28,8 @@ public class DarkzoneDropFilter implements Listener {
     public void onDarkzoneMobDeath(EntityDeathEvent event) {
         LivingEntity entity = event.getEntity();
 
-        // Only filter if suppress-vanilla-drops is enabled
-        if (!plugin.getConfigManager().isSuppressVanillaDrops()) {
+        // Only filter if factions integration and suppress-vanilla-drops are enabled
+        if (!plugin.getConfigManager().isFactionsEnabled() || !plugin.getConfigManager().isSuppressVanillaDrops()) {
             return;
         }
 

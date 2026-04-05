@@ -123,6 +123,21 @@ integrations:
   placeholderapi:
     enabled: true
   
+  # Factions/Warzone integration (disabled by default for vanilla SMP)
+  # Enable these if your server runs FactionsUUID/FactionsKore
+  factions:
+    enabled: false
+    # Bonus head drop rate in warzone territory (multiplier, 1.0 = normal)
+    warzone-drop-multiplier: 1.5
+    # Only allow collectors in faction territory
+    collector-territory-check: false
+    # Allow faction-wide boosters (in addition to personal)
+    faction-boosters: false
+    # Darkzone world name (FKore custom world)
+    darkzone-world: ""
+    # Suppress vanilla drops for custom-named mobs in darkzone world
+    suppress-vanilla-drops: false
+
   # LuckPerms - for permission management
   luckperms:
     enabled: true

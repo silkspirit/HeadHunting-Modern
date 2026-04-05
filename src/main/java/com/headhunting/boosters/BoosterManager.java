@@ -25,6 +25,9 @@ public class BoosterManager {
     // Personal boosters: Player UUID -> Type -> ActiveBooster
     private final Map<UUID, Map<BoosterType, ActiveBooster>> personalBoosters = new ConcurrentHashMap<>();
 
+    // Faction boosters: Faction UUID -> Type -> ActiveBooster (only used when enabled in config)
+    private final Map<String, Map<BoosterType, ActiveBooster>> factionBoosters = new ConcurrentHashMap<>();
+
     // Cleanup task
     private BukkitTask cleanupTask;
 
@@ -62,10 +65,11 @@ public class BoosterManager {
 
         List<SQLiteProvider.BoosterRow> rows = sqliteProvider.loadAllBoosters();
         int personalCount = 0;
+        int factionCount = 0;
 
         for (SQLiteProvider.BoosterRow row : rows) {
-            // Only restore personal boosters
-            if (!"personal".equals(row.scope)) continue;
+            // Skip faction boosters if not enabled
+            if ("faction".equals(row.scope) && !plugin.getConfigManager().isFactionBoostersEnabled()) continue;
 
             UUID activatedByUuid = null;
             if (row.activatedByUuid != null && !row.activatedByUuid.isEmpty()) {
@@ -80,18 +84,24 @@ public class BoosterManager {
                 activatedByUuid, row.activatedByName
             );
 
-            try {
-                UUID ownerUuid = UUID.fromString(row.ownerId);
-                Map<BoosterType, ActiveBooster> playerBoosters = personalBoosters.computeIfAbsent(ownerUuid, k -> new ConcurrentHashMap<>());
-                playerBoosters.put(row.boosterType, booster);
-                personalCount++;
-            } catch (IllegalArgumentException e) {
-                plugin.getLogger().warning("[Boosters] Invalid UUID in persisted personal booster: " + row.ownerId);
+            if ("personal".equals(row.scope)) {
+                try {
+                    UUID ownerUuid = UUID.fromString(row.ownerId);
+                    Map<BoosterType, ActiveBooster> playerBoosters = personalBoosters.computeIfAbsent(ownerUuid, k -> new ConcurrentHashMap<>());
+                    playerBoosters.put(row.boosterType, booster);
+                    personalCount++;
+                } catch (IllegalArgumentException e) {
+                    plugin.getLogger().warning("[Boosters] Invalid UUID in persisted personal booster: " + row.ownerId);
+                }
+            } else if ("faction".equals(row.scope)) {
+                Map<BoosterType, ActiveBooster> facBoosters = factionBoosters.computeIfAbsent(row.ownerId, k -> new ConcurrentHashMap<>());
+                facBoosters.put(row.boosterType, booster);
+                factionCount++;
             }
         }
 
-        if (personalCount > 0) {
-            plugin.getLogger().info("[Boosters] Restored " + personalCount + " personal booster(s) from database.");
+        if (personalCount > 0 || factionCount > 0) {
+            plugin.getLogger().info("[Boosters] Restored " + personalCount + " personal and " + factionCount + " faction booster(s) from database.");
         }
     }
 
@@ -139,6 +149,7 @@ public class BoosterManager {
      * Remove expired boosters, notify players, and clean up SQLite
      */
     private void cleanupExpiredBoosters() {
+        // Clean personal boosters
         for (Map.Entry<UUID, Map<BoosterType, ActiveBooster>> entry : personalBoosters.entrySet()) {
             UUID playerUuid = entry.getKey();
             Map<BoosterType, ActiveBooster> boosters = entry.getValue();
@@ -155,6 +166,26 @@ public class BoosterManager {
                     if (player != null) {
                         String typeName = expiredType.getDisplayName();
                         MessageUtil.send(player, "&c&l⚡ &cYour personal " + typeName + " booster has expired!");
+                    }
+                }
+            }
+        }
+
+        // Clean faction boosters (only when enabled)
+        if (plugin.getConfigManager().isFactionBoostersEnabled()) {
+            for (Map.Entry<String, Map<BoosterType, ActiveBooster>> entry : factionBoosters.entrySet()) {
+                String factionId = entry.getKey();
+                Map<BoosterType, ActiveBooster> boosters = entry.getValue();
+
+                Iterator<Map.Entry<BoosterType, ActiveBooster>> iter = boosters.entrySet().iterator();
+                while (iter.hasNext()) {
+                    Map.Entry<BoosterType, ActiveBooster> boosterEntry = iter.next();
+                    if (boosterEntry.getValue().isExpired()) {
+                        BoosterType expiredType = boosterEntry.getKey();
+                        iter.remove();
+                        removePersistedBooster("faction", factionId, expiredType);
+                        notifyFactionMembers(factionId, "&c&l⚡ &cYour faction's " +
+                            expiredType.getDisplayName() + " booster has expired!");
                     }
                 }
             }
@@ -202,7 +233,50 @@ public class BoosterManager {
     }
 
     /**
-     * Get the total XP multiplier for a player
+     * Activate a faction booster (only works when faction-boosters enabled in config)
+     */
+    public boolean activateFactionBooster(Player player, BoosterType type, double multiplier, long durationMs) {
+        String factionId = getFactionId(player);
+
+        if (factionId == null) {
+            MessageUtil.send(player, "&c&l⚡ &cYou need to be in a faction to activate faction boosters!");
+            return false;
+        }
+
+        Map<BoosterType, ActiveBooster> facBoosters = factionBoosters.computeIfAbsent(factionId, k -> new ConcurrentHashMap<>());
+
+        ActiveBooster existing = facBoosters.get(type);
+        if (existing != null && !existing.isExpired()) {
+            MessageUtil.send(player, "&c&l⚡ &cYour faction already has a " +
+                type.getDisplayName() + " booster active! (" + existing.getRemainingFormatted() + " left)");
+            return false;
+        }
+
+        ActiveBooster booster = new ActiveBooster(type, multiplier, durationMs, player.getUniqueId(), player.getName());
+        facBoosters.put(type, booster);
+
+        String factionName = getFactionName(player);
+        persistBooster("faction", factionId, factionName != null ? factionName : factionId, booster);
+
+        String typeName = type.getDisplayName();
+        String duration = formatDuration(durationMs);
+
+        List<String> message = Arrays.asList(
+            "",
+            "&d&l⚡ FACTION " + typeName.toUpperCase() + " BOOSTER ACTIVATED ⚡",
+            "",
+            "&d" + player.getName() + " &eactivated a faction booster!",
+            "&7Multiplier: &a" + multiplier + "x",
+            "&7Duration: &e" + duration,
+            ""
+        );
+
+        notifyFactionMembers(factionId, message);
+        return true;
+    }
+
+    /**
+     * Get the total XP multiplier for a player (personal + faction if enabled)
      */
     public double getXpMultiplier(Player player) {
         double multiplier = 1.0;
@@ -215,11 +289,25 @@ public class BoosterManager {
             }
         }
 
+        // Faction booster stacks with personal (only when enabled)
+        if (plugin.getConfigManager().isFactionBoostersEnabled()) {
+            String factionId = getFactionId(player);
+            if (factionId != null) {
+                Map<BoosterType, ActiveBooster> faction = factionBoosters.get(factionId);
+                if (faction != null) {
+                    ActiveBooster xpBooster = faction.get(BoosterType.XP);
+                    if (xpBooster != null && !xpBooster.isExpired()) {
+                        multiplier *= xpBooster.getMultiplier();
+                    }
+                }
+            }
+        }
+
         return multiplier;
     }
 
     /**
-     * Get the total Sell multiplier for a player
+     * Get the total Sell multiplier for a player (personal + faction if enabled)
      */
     public double getSellMultiplier(Player player) {
         double multiplier = 1.0;
@@ -229,6 +317,19 @@ public class BoosterManager {
             ActiveBooster sellBooster = personal.get(BoosterType.SELL);
             if (sellBooster != null && !sellBooster.isExpired()) {
                 multiplier *= sellBooster.getMultiplier();
+            }
+        }
+
+        if (plugin.getConfigManager().isFactionBoostersEnabled()) {
+            String factionId = getFactionId(player);
+            if (factionId != null) {
+                Map<BoosterType, ActiveBooster> faction = factionBoosters.get(factionId);
+                if (faction != null) {
+                    ActiveBooster sellBooster = faction.get(BoosterType.SELL);
+                    if (sellBooster != null && !sellBooster.isExpired()) {
+                        multiplier *= sellBooster.getMultiplier();
+                    }
+                }
             }
         }
 
@@ -249,6 +350,19 @@ public class BoosterManager {
             }
         }
 
+        if (plugin.getConfigManager().isFactionBoostersEnabled()) {
+            String factionId = getFactionId(player);
+            if (factionId != null) {
+                Map<BoosterType, ActiveBooster> faction = factionBoosters.get(factionId);
+                if (faction != null) {
+                    ActiveBooster fishingBooster = faction.get(BoosterType.FISHING);
+                    if (fishingBooster != null && !fishingBooster.isExpired()) {
+                        multiplier *= fishingBooster.getMultiplier();
+                    }
+                }
+            }
+        }
+
         return multiplier;
     }
 
@@ -261,6 +375,19 @@ public class BoosterManager {
             ActiveBooster booster = personal.get(type);
             if (booster != null && !booster.isExpired()) {
                 return true;
+            }
+        }
+
+        if (plugin.getConfigManager().isFactionBoostersEnabled()) {
+            String factionId = getFactionId(player);
+            if (factionId != null) {
+                Map<BoosterType, ActiveBooster> faction = factionBoosters.get(factionId);
+                if (faction != null) {
+                    ActiveBooster booster = faction.get(type);
+                    if (booster != null && !booster.isExpired()) {
+                        return true;
+                    }
+                }
             }
         }
 
@@ -280,6 +407,22 @@ public class BoosterManager {
                 if (!b.isExpired()) {
                     String typeName = entry.getKey().getDisplayName();
                     status.add("&b⚡ Personal " + typeName + ": &a" + b.getMultiplier() + "x &7(" + b.getRemainingFormatted() + ")");
+                }
+            }
+        }
+
+        if (plugin.getConfigManager().isFactionBoostersEnabled()) {
+            String factionId = getFactionId(player);
+            if (factionId != null) {
+                Map<BoosterType, ActiveBooster> faction = factionBoosters.get(factionId);
+                if (faction != null) {
+                    for (Map.Entry<BoosterType, ActiveBooster> entry : faction.entrySet()) {
+                        ActiveBooster b = entry.getValue();
+                        if (!b.isExpired()) {
+                            String typeName = entry.getKey().getDisplayName();
+                            status.add("&d⚡ Faction " + typeName + ": &a" + b.getMultiplier() + "x &7(" + b.getRemainingFormatted() + ")");
+                        }
+                    }
                 }
             }
         }
@@ -410,6 +553,63 @@ public class BoosterManager {
     // =========================================================================
     // UTILITY METHODS
     // =========================================================================
+
+    /**
+     * Get faction ID for a player using reflection (works with FactionsUUID/FactionsKore)
+     */
+    public String getFactionId(Player player) {
+        try {
+            Class<?> fPlayersClass = Class.forName("com.massivecraft.factions.FPlayers");
+            Object fPlayers = fPlayersClass.getMethod("getInstance").invoke(null);
+            Object fPlayer = fPlayersClass.getMethod("getByPlayer", Player.class).invoke(fPlayers, player);
+            if (fPlayer == null) return null;
+
+            Object faction = fPlayer.getClass().getMethod("getFaction").invoke(fPlayer);
+            if (faction == null) return null;
+
+            boolean isNormal = (boolean) faction.getClass().getMethod("isNormal").invoke(faction);
+            if (!isNormal) return null;
+
+            return (String) faction.getClass().getMethod("getId").invoke(faction);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    /**
+     * Get faction name for a player
+     */
+    public String getFactionName(Player player) {
+        try {
+            Class<?> fPlayersClass = Class.forName("com.massivecraft.factions.FPlayers");
+            Object fPlayers = fPlayersClass.getMethod("getInstance").invoke(null);
+            Object fPlayer = fPlayersClass.getMethod("getByPlayer", Player.class).invoke(fPlayers, player);
+            if (fPlayer == null) return null;
+
+            Object faction = fPlayer.getClass().getMethod("getFaction").invoke(fPlayer);
+            if (faction == null) return null;
+
+            return (String) faction.getClass().getMethod("getTag").invoke(faction);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    private void notifyFactionMembers(String factionId, String message) {
+        notifyFactionMembers(factionId, Collections.singletonList(message));
+    }
+
+    private void notifyFactionMembers(String factionId, List<String> messages) {
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            String playerFactionId = getFactionId(player);
+            if (factionId.equals(playerFactionId)) {
+                for (String msg : messages) {
+                    MessageUtil.send(player, msg);
+                }
+                player.playSound(player.getLocation(), org.bukkit.Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.5f);
+            }
+        }
+    }
 
     private String formatDuration(long ms) {
         long minutes = ms / (1000 * 60);

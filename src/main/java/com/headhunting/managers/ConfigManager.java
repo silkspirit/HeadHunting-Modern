@@ -265,10 +265,23 @@ public class ConfigManager {
         return config.getBoolean("economy.shift-click-sell", true);
     }
     
+    // Factions integration toggles (all off by default for vanilla SMP)
+    public boolean isFactionsEnabled() {
+        return config.getBoolean("integrations.factions.enabled", false);
+    }
+
     public double getWarzoneDropMultiplier() {
         return config.getDouble("integrations.factions.warzone-drop-multiplier", 1.5);
     }
-    
+
+    public boolean isCollectorTerritoryCheckEnabled() {
+        return config.getBoolean("integrations.factions.collector-territory-check", false);
+    }
+
+    public boolean isFactionBoostersEnabled() {
+        return config.getBoolean("integrations.factions.faction-boosters", false);
+    }
+
     public boolean isWorldAllowedForHeadDrops(String worldName) {
         if (!config.getBoolean("head-drops.world-whitelist.enabled", false)) {
             return true;

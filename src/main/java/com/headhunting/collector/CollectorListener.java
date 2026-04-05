@@ -120,6 +120,14 @@ public class CollectorListener implements Listener {
             return;
         }
 
+        // Factions territory check (only when enabled in config)
+        if (plugin.getConfigManager().isCollectorTerritoryCheckEnabled()) {
+            if (!checkFactionsAccess(player, block.getLocation())) {
+                MessageUtil.send(player, "&cYou can only access collectors in your faction's territory.");
+                return;
+            }
+        }
+
         new CollectorGUI(plugin, player, cd).open();
     }
 
@@ -158,6 +166,43 @@ public class CollectorListener implements Listener {
      * i.e. it contains the HEAD_NBT_KEY marker but NOT the MASK_NBT_KEY marker,
      * and NOT the MysteryMask/SpiritEssence markers.
      */
+    /**
+     * FactionsUUID access check: player must be in their own faction territory.
+     * Only called when integrations.factions.collector-territory-check is enabled.
+     */
+    private boolean checkFactionsAccess(Player player, Location loc) {
+        try {
+            Class<?> boardClass = Class.forName("com.massivecraft.factions.Board");
+            Object boardInstance = boardClass.getMethod("getInstance").invoke(null);
+
+            Class<?> flocationClass = Class.forName("com.massivecraft.factions.FLocation");
+            Object flocation = flocationClass.getConstructor(Location.class).newInstance(loc);
+
+            Object landFaction = boardClass.getMethod("getFactionAt", flocationClass)
+                    .invoke(boardInstance, flocation);
+
+            if (landFaction == null) return true;
+
+            boolean isWilderness = (boolean) landFaction.getClass()
+                    .getMethod("isWilderness").invoke(landFaction);
+            if (isWilderness) return true;
+
+            Class<?> fplayersClass = Class.forName("com.massivecraft.factions.FPlayers");
+            Object fplayersInstance = fplayersClass.getMethod("getInstance").invoke(null);
+            Object fp = fplayersClass.getMethod("getByPlayer", Player.class)
+                    .invoke(fplayersInstance, player);
+            if (fp == null) return false;
+
+            Object playerFaction = fp.getClass().getMethod("getFaction").invoke(fp);
+            return landFaction.equals(playerFaction);
+
+        } catch (ClassNotFoundException | NoClassDefFoundError e) {
+            return true; // Factions not installed
+        } catch (Exception e) {
+            return true; // Default to allow
+        }
+    }
+
     private boolean isCollectableHead(ItemStack item) {
         if (item == null || item.getType() != Material.PLAYER_HEAD) return false;
         if (!item.hasItemMeta() || !item.getItemMeta().hasLore()) return false;
