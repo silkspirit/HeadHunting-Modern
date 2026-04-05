@@ -1,5 +1,5 @@
 name: HeadHunting
-version: ${project.version}
+version: 4.2.1
 main: com.headhunting.HeadHunting
 author: Johann
 description: A comprehensive mob head progression system with masks, levels, and abilities.
