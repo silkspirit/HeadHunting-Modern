@@ -3,6 +3,7 @@
 # ============================================
 # Complete missions to unlock Divine Masks!
 # Each divine mask requires completing its associated mission.
+# All missions use vanilla SMP mechanics - no mods required!
 # Ordered from EASIEST to HARDEST
 
 # ============================================
@@ -11,9 +12,18 @@
 # KILL_MOBS           - Kill any mobs
 # KILL_SPECIFIC_MOB   - Kill specific mob type (use target: MOB_TYPE)
 # KILL_PLAYERS        - Kill players in PvP
-# KILL_DARKZONE_MOBS  - Kill mobs in Darkzone region
-# FISH_CATCHES        - Catch fish in warzone
-# BREAK_SPAWNERS      - Break spawners
+# FISH_CATCHES        - Catch fish (anywhere)
+# MINE_BLOCKS         - Mine any blocks
+# MINE_SPECIFIC_BLOCK - Mine specific block (use target: MATERIAL)
+# BREED_ANIMALS       - Breed animals
+# ENCHANT_ITEMS       - Enchant items at enchanting table
+# BREW_POTIONS        - Brew potions
+# TRADE_VILLAGERS     - Trade with villagers
+# TAME_ANIMALS        - Tame animals
+# SMELT_ITEMS         - Smelt items in furnace
+# HARVEST_CROPS       - Harvest crops
+# PLACE_BLOCKS        - Place blocks
+# EAT_FOOD            - Eat food items
 # DEPOSIT_HEADS       - Deposit heads into cauldron
 # DEPOSIT_SPECIFIC_HEAD - Deposit specific head type
 # REACH_LEVEL         - Reach HeadHunting level
@@ -24,30 +34,12 @@
 # EARN_MONEY          - Earn money from selling heads
 # ============================================
 
-# ============================================
-# ICON OPTIONS
-# ============================================
-# icon-material: Material name (e.g., DIAMOND_SWORD)
-# icon-data: Data value (for colored items, fish types, etc.)
-# icon-skull: Base64 skull texture (for custom heads)
-# icon-glow: true/false - Add enchant glow
-# ============================================
-
-# ============================================
-# DARKZONE SETTINGS
-# ============================================
-darkzone:
-  detection: factions
-  factions-tag: "darkzone"
-  worldguard-region: "darkzone"
-  world-name: "darkzone"
-
 missions:
 
   # ============================================
   # 1. CHICKEN - "First Steps" (EASIEST)
   # ============================================
-  # Theme: Baby's first mission - super easy intro
+  # Theme: Getting started - kill mobs, collect heads, level up
   chicken_mission:
     display-name: "&e&l✦ First Steps ✦"
     description: "&7Begin your HeadHunting journey!"
@@ -74,12 +66,12 @@ missions:
       - "broadcast &e&l✦ &6{player} &ehas completed their &lFirst Steps&e!"
 
   # ============================================
-  # 2. IRON GOLEM - "Protector of the Grind" (EASY)
+  # 2. IRON GOLEM - "The Farmer" (EASY)
   # ============================================
-  # Theme: Master the grinding basics
+  # Theme: Farming, breeding, and building your homestead
   iron_golem_mission:
-    display-name: "&f&lProtector of the Grind"
-    description: "&7Master the art of grinding to unlock the Iron Golem mask."
+    display-name: "&f&lThe Farmer"
+    description: "&7Build your homestead and tend to your land."
     unlocks-mask: iron_golem
     icon-material: PLAYER_HEAD
     icon-data: 3
@@ -87,28 +79,28 @@ missions:
     icon-glow: false
     difficulty: 2
     requirements:
-      kill_mobs:
-        type: KILL_MOBS
-        amount: 500
-        description: "&7Kill 500 mobs"
-      own_basic_masks:
-        type: OWN_MASK_COUNT
-        amount: 5
-        description: "&7Own 5 different masks"
+      harvest_crops:
+        type: HARVEST_CROPS
+        amount: 200
+        description: "&7Harvest 200 crops"
+      breed_animals:
+        type: BREED_ANIMALS
+        amount: 50
+        description: "&7Breed 50 animals"
       deposit_heads:
         type: DEPOSIT_HEADS
-        amount: 250
-        description: "&7Deposit 250 heads total"
+        amount: 150
+        description: "&7Deposit 150 heads total"
     reward-commands:
       - "broadcast &6&l✦ &e{player} &7has unlocked the &fIron Golem &7mission!"
 
   # ============================================
   # 3. GUARDIAN - "Ocean Explorer" (EASY-MEDIUM)
   # ============================================
-  # Theme: Early fishing achievement
+  # Theme: Fishing and ocean exploration
   guardian_mission:
     display-name: "&3&l✦ Ocean Explorer ✦"
-    description: "&7Explore the warzone waters and prove your fishing skills."
+    description: "&7Cast your line and explore the waters."
     unlocks-mask: guardian
     icon-material: PLAYER_HEAD
     icon-data: 3
@@ -119,25 +111,26 @@ missions:
       fish_catches:
         type: FISH_CATCHES
         amount: 100
-        description: "&7Catch 100 fish in warzone"
+        description: "&7Catch 100 fish"
       reach_level:
         type: REACH_LEVEL
         amount: 5
         description: "&7Reach HeadHunting level 5"
-      deposit_heads:
-        type: DEPOSIT_HEADS
-        amount: 100
-        description: "&7Deposit 100 heads total"
+      kill_specific:
+        type: KILL_SPECIFIC_MOB
+        amount: 30
+        target: DROWNED
+        description: "&7Kill 30 drowned"
     reward-commands:
       - "broadcast &6&l✦ &e{player} &7has unlocked the &3Guardian &7mission!"
 
   # ============================================
-  # 4. SKELETON HORSE - "Risen from Death" (MEDIUM)
+  # 4. SKELETON HORSE - "The Miner" (MEDIUM)
   # ============================================
-  # Theme: PvP fighter who keeps coming back
+  # Theme: Deep mining and smelting
   skeleton_horse_mission:
-    display-name: "&7&lRisen from Death"
-    description: "&7Prove yourself in combat to unlock the Skeleton Horse mask."
+    display-name: "&7&lThe Miner"
+    description: "&7Delve deep into the earth and master the forge."
     unlocks-mask: skeleton_horse
     icon-material: PLAYER_HEAD
     icon-data: 3
@@ -145,28 +138,29 @@ missions:
     icon-glow: false
     difficulty: 4
     requirements:
-      kill_players:
-        type: KILL_PLAYERS
-        amount: 25
-        description: "&7Kill 25 players"
+      mine_diamonds:
+        type: MINE_SPECIFIC_BLOCK
+        amount: 100
+        target: DIAMOND_ORE
+        description: "&7Mine 100 diamond ore"
+      smelt_items:
+        type: SMELT_ITEMS
+        amount: 500
+        description: "&7Smelt 500 items"
       reach_level:
         type: REACH_LEVEL
         amount: 8
         description: "&7Reach HeadHunting level 8"
-      consume_heads:
-        type: CONSUME_HEADS
-        amount: 200
-        description: "&7Consume 200 heads for XP"
     reward-commands:
       - "broadcast &6&l✦ &e{player} &7has unlocked the &7Skeleton Horse &7mission!"
 
   # ============================================
-  # 5. UNDEAD HORSE - "Darkzone Survivor" (MEDIUM-HARD)
+  # 5. UNDEAD HORSE - "Nether Voyager" (MEDIUM-HARD)
   # ============================================
-  # Theme: Conquer the dangerous Darkzone
+  # Theme: Conquer the Nether - brew potions, kill nether mobs
   undead_horse_mission:
-    display-name: "&2&lDarkzone Survivor"
-    description: "&7Survive and thrive in the Darkzone to unlock the Undead Horse mask."
+    display-name: "&6&lNether Voyager"
+    description: "&7Brave the Nether and master its dangers."
     unlocks-mask: undead_horse
     icon-material: PLAYER_HEAD
     icon-data: 3
@@ -174,29 +168,29 @@ missions:
     icon-glow: false
     difficulty: 5
     requirements:
-      darkzone_kills:
-        type: KILL_DARKZONE_MOBS
-        amount: 200
-        description: "&7Kill 200 mobs in the Darkzone"
-      own_skeleton_horse:
-        type: OWN_MASK
-        amount: 1
-        target: skeleton_horse
-        description: "&7Own the Skeleton Horse mask"
+      kill_blazes:
+        type: KILL_SPECIFIC_MOB
+        amount: 100
+        target: BLAZE
+        description: "&7Kill 100 blazes"
+      brew_potions:
+        type: BREW_POTIONS
+        amount: 50
+        description: "&7Brew 50 potions"
       reach_level:
         type: REACH_LEVEL
         amount: 10
         description: "&7Reach HeadHunting level 10"
     reward-commands:
-      - "broadcast &6&l✦ &e{player} &7has unlocked the &2Undead Horse &7mission!"
+      - "broadcast &6&l✦ &e{player} &7has unlocked the &6Undead Horse &7mission!"
 
   # ============================================
-  # 6. ELDER GUARDIAN - "Lord of the Depths" (HARD)
+  # 6. ELDER GUARDIAN - "Master Trader" (HARD)
   # ============================================
-  # Theme: Master fisherman
+  # Theme: Trading, enchanting, and economic mastery
   elder_guardian_mission:
-    display-name: "&3&lLord of the Depths"
-    description: "&7Master the warzone waters to unlock the Elder Guardian."
+    display-name: "&3&lMaster Trader"
+    description: "&7Master the art of enchanting and trading."
     unlocks-mask: elder_guardian
     icon-material: PLAYER_HEAD
     icon-data: 3
@@ -204,30 +198,28 @@ missions:
     icon-glow: true
     difficulty: 6
     requirements:
-      fish_catches:
-        type: FISH_CATCHES
-        amount: 300
-        description: "&7Catch 300 fish in warzone"
-      guardian_max:
-        type: OWN_MASK_LEVEL
-        amount: 5
-        target: guardian
-        description: "&7Own Guardian mask at level 5 (MAX)"
+      enchant_items:
+        type: ENCHANT_ITEMS
+        amount: 75
+        description: "&7Enchant 75 items"
+      trade_villagers:
+        type: TRADE_VILLAGERS
+        amount: 200
+        description: "&7Trade with villagers 200 times"
       reach_level:
         type: REACH_LEVEL
         amount: 11
         description: "&7Reach HeadHunting level 11"
     reward-commands:
       - "broadcast &6&l✦ &e{player} &7has unlocked the &3Elder Guardian &7mission!"
-      - "effect {player} WATER_BREATHING 600 0"
 
   # ============================================
-  # 7. WITHER - "Destruction Incarnate" (VERY HARD)
+  # 7. WITHER - "The Slayer" (VERY HARD)
   # ============================================
-  # Theme: Break and destroy everything
+  # Theme: Ultimate mob hunter and head collector
   wither_mission:
-    display-name: "&8&lDestruction Incarnate"
-    description: "&7Become the embodiment of destruction."
+    display-name: "&8&lThe Slayer"
+    description: "&7Become the ultimate mob hunter."
     unlocks-mask: wither
     icon-material: PLAYER_HEAD
     icon-data: 3
@@ -235,14 +227,15 @@ missions:
     icon-glow: true
     difficulty: 7
     requirements:
-      break_spawners:
-        type: BREAK_SPAWNERS
-        amount: 50
-        description: "&7Break 50 spawners"
-      reach_max_level:
-        type: REACH_LEVEL
-        amount: 14
-        description: "&7Reach HeadHunting level 14 (MAX)"
+      kill_mobs:
+        type: KILL_MOBS
+        amount: 2000
+        description: "&7Kill 2,000 mobs"
+      kill_wither_skeletons:
+        type: KILL_SPECIFIC_MOB
+        amount: 100
+        target: WITHER_SKELETON
+        description: "&7Kill 100 wither skeletons"
       earn_money:
         type: EARN_MONEY
         amount: 500000
@@ -254,7 +247,7 @@ missions:
   # ============================================
   # 8. ENDER DRAGON - "Master of HeadHunting" (LEGENDARY)
   # ============================================
-  # Theme: Ultimate grinder and collector
+  # Theme: Ultimate grinder, collector, and SMP veteran
   ender_dragon_mission:
     display-name: "&5&l✦ Master of HeadHunting ✦"
     description: "&7Become the ultimate HeadHunter."
@@ -291,11 +284,11 @@ missions:
 # ============================================
 # Difficulty rankings (1-8):
 # 1. Chicken (First Steps) - 30 min to 1 hour
-# 2. Iron Golem (Protector) - 2-4 hours
+# 2. Iron Golem (The Farmer) - 2-4 hours
 # 3. Guardian (Ocean Explorer) - 2-3 hours
-# 4. Skeleton Horse (Risen) - 4-8 hours
-# 5. Undead Horse (Darkzone) - 6-10 hours
-# 6. Elder Guardian (Lord) - 8-12 hours
-# 7. Wither (Destruction) - 10-15 hours
+# 4. Skeleton Horse (The Miner) - 4-8 hours
+# 5. Undead Horse (Nether Voyager) - 6-10 hours
+# 6. Elder Guardian (Master Trader) - 8-12 hours
+# 7. Wither (The Slayer) - 10-15 hours
 # 8. Ender Dragon (Master) - 15-25 hours
 # ============================================

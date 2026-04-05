@@ -24,12 +24,6 @@ public class MissionManager {
     private final HeadHunting plugin;
     private final Map<String, MissionConfig> missions = new HashMap<>();
     
-    // Darkzone settings
-    private String darkzoneDetection = "factions";
-    private String darkzoneFactionTag = "darkzone";
-    private String darkzoneWorldGuardRegion = "darkzone";
-    private String darkzoneWorldName = "darkzone";
-    
     public MissionManager(HeadHunting plugin) {
         this.plugin = plugin;
         loadMissions();
@@ -44,15 +38,6 @@ public class MissionManager {
         }
         
         YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
-        
-        // Load Darkzone settings
-        ConfigurationSection darkzoneSection = config.getConfigurationSection("darkzone");
-        if (darkzoneSection != null) {
-            darkzoneDetection = darkzoneSection.getString("detection", "factions");
-            darkzoneFactionTag = darkzoneSection.getString("factions-tag", "darkzone");
-            darkzoneWorldGuardRegion = darkzoneSection.getString("worldguard-region", "darkzone");
-            darkzoneWorldName = darkzoneSection.getString("world-name", "darkzone");
-        }
         
         // Load missions
         ConfigurationSection missionsSection = config.getConfigurationSection("missions");
@@ -301,9 +286,4 @@ public class MissionManager {
         loadMissions();
     }
     
-    // Darkzone getters
-    public String getDarkzoneDetection() { return darkzoneDetection; }
-    public String getDarkzoneFactionTag() { return darkzoneFactionTag; }
-    public String getDarkzoneWorldGuardRegion() { return darkzoneWorldGuardRegion; }
-    public String getDarkzoneWorldName() { return darkzoneWorldName; }
 }

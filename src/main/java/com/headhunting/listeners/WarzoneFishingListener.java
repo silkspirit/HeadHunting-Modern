@@ -2,7 +2,6 @@ package com.headhunting.listeners;
 
 import com.headhunting.HeadHunting;
 import com.headhunting.data.FishingReward;
-import com.headhunting.data.MissionConfig.MissionType;
 import com.headhunting.utils.MessageUtil;
 import com.headhunting.utils.TitleUtil;
 import org.bukkit.Bukkit;
@@ -61,10 +60,8 @@ public class WarzoneFishingListener implements Listener {
             event.getCaught().remove();
         }
         
-        // Track mission progress
-        plugin.getMissionManager().addProgress(player, MissionType.FISH_CATCHES, 1);
-        
-        // Note: Fishing boost event now affects CATCH RATE only (fish bite faster),
+        // Note: Mission progress for FISH_CATCHES is tracked globally in MissionListener.
+        // Fishing boost event now affects CATCH RATE only (fish bite faster),
         // not drop rates or reward quantities. WarzoneFishing handles the NMS hook
         // wait time reduction. Rewards here use base values with no multiplier.
         boolean isBoosted = plugin.getFishingManager().isBoostActive();
