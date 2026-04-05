@@ -66,12 +66,8 @@ public class BoosterListener implements Listener {
         
         long durationMs = durationMinutes * 60 * 1000L;
         
-        boolean success;
-        if (scope.equalsIgnoreCase("faction")) {
-            success = boosterManager.activateFactionBooster(player, type, multiplier, durationMs);
-        } else {
-            success = boosterManager.activatePersonalBooster(player, type, multiplier, durationMs);
-        }
+        // All boosters are personal on SMP
+        boolean success = boosterManager.activatePersonalBooster(player, type, multiplier, durationMs);
         
         if (success) {
             // Consume the item

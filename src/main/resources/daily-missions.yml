@@ -74,8 +74,8 @@ missions:
     rewards:
       - "eco give {player} 20000"
       - "hh giveessence {player} 100"
-      - "give {player} DIAMOND 16"
-      - "msg {player} &6+$20,000&7, &d100 Essence&7, and &b16 Diamonds!"
+      - "hh givemystery {player} rare"
+      - "msg {player} &6+$20,000&7, &d100 Essence&7, and a &5Mystery Mask!"
 
   # ============================================
   # XP GRINDING MISSIONS
@@ -128,8 +128,8 @@ missions:
     rewards:
       - "eco give {player} 10000"
       - "hh giveessence {player} 50"
-      - "give {player} DIAMOND 8"
-      - "msg {player} &6+$10,000&7, &d50 Essence&7, and &b8 Diamonds!"
+      - "hh givemystery {player} uncommon"
+      - "msg {player} &6+$10,000&7, &d50 Essence&7, and a &aMystery Mask!"
 
   zombie_purge:
     display-name: "&2&lZombie Purge"
@@ -228,8 +228,8 @@ missions:
     rewards:
       - "eco give {player} 15000"
       - "hh giveessence {player} 75"
-      - "give {player} DIAMOND 10"
-      - "msg {player} &6+$15,000&7, &d75 Essence&7, and &b10 Diamonds!"
+      - "hh givemystery {player} rare"
+      - "msg {player} &6+$15,000&7, &d75 Essence&7, and a &5Mystery Mask!"
 
   # ============================================
   # FARMING MISSIONS
@@ -256,8 +256,8 @@ missions:
     rewards:
       - "eco give {player} 15000"
       - "hh giveessence {player} 75"
-      - "give {player} DIAMOND 12"
-      - "msg {player} &6+$15,000&7, &d75 Essence&7, and &b12 Diamonds!"
+      - "hh givemystery {player} uncommon"
+      - "msg {player} &6+$15,000&7, &d75 Essence&7, and a &aMystery Mask!"
 
   # ============================================
   # MINING MISSIONS
@@ -285,8 +285,8 @@ missions:
     rewards:
       - "eco give {player} 10000"
       - "hh giveessence {player} 50"
-      - "give {player} DIAMOND 8"
-      - "msg {player} &6+$10,000&7, &d50 Essence&7, and &b8 Diamonds!"
+      - "hh givemystery {player} uncommon"
+      - "msg {player} &6+$10,000&7, &d50 Essence&7, and a &aMystery Mask!"
 
   # ============================================
   # CRAFTING & UTILITY MISSIONS
@@ -366,3 +366,55 @@ missions:
       - "hh giveessence {player} 40"
       - "give {player} EMERALD 16"
       - "msg {player} &6+$8,000&7, &d40 Essence&7, and &a16 Emeralds!"
+
+  # ============================================
+  # NEW MOB MISSIONS
+  # ============================================
+
+  drowned_slayer:
+    display-name: "&3&lDrowned Slayer"
+    description: "&7Kill 50 drowned"
+    type: KILL_SPECIFIC_MOB
+    target: DROWNED
+    required: 50
+    icon: TRIDENT
+    rewards:
+      - "eco give {player} 5000"
+      - "hh givehead {player} drowned 8"
+      - "msg {player} &6+$5,000 &7and &38 Drowned Heads!"
+
+  phantom_hunter:
+    display-name: "&5&lPhantom Hunter"
+    description: "&7Kill 25 phantoms"
+    type: KILL_SPECIFIC_MOB
+    target: PHANTOM
+    required: 25
+    icon: PHANTOM_MEMBRANE
+    rewards:
+      - "eco give {player} 7000"
+      - "hh giveessence {player} 35"
+      - "msg {player} &6+$7,000 &7and &d35 Essence!"
+
+  pillager_defender:
+    display-name: "&4&lPillager Defender"
+    description: "&7Kill 40 pillagers"
+    type: KILL_SPECIFIC_MOB
+    target: PILLAGER
+    required: 40
+    icon: CROSSBOW
+    rewards:
+      - "eco give {player} 6000"
+      - "hh giveessence {player} 30"
+      - "msg {player} &6+$6,000 &7and &d30 Essence!"
+
+  hoglin_hunter:
+    display-name: "&6&lHoglin Hunter"
+    description: "&7Kill 30 hoglins"
+    type: KILL_SPECIFIC_MOB
+    target: HOGLIN
+    required: 30
+    icon: LEATHER
+    rewards:
+      - "eco give {player} 5500"
+      - "hh giveessence {player} 30"
+      - "msg {player} &6+$5,500 &7and &d30 Essence!"

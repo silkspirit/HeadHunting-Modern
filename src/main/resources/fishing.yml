@@ -1,14 +1,16 @@
 # ============================================
-# HeadHunting - Warzone Fishing Configuration
+# HeadHunting - Fishing Configuration
 # ============================================
-# Fish in warzone areas to get special rewards!
+# Fish anywhere to get special rewards!
 
 settings:
   enabled: true
-  claim-plugin: factions
-  worldguard-region: warzone
+  claim-plugin: none
+  worldguard-region: ""
   allowed-worlds:
     - world
+    - world_nether
+    - world_the_end
   drop-at-hook: false
   title-fade-in: 10
   title-stay: 40

@@ -72,6 +72,38 @@ heads:
     display-name: "&fCreeper Head"
     texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjQyNTQ4MzhjMzNlYTIyN2ZmY2EyMjNkZGRhYWJmZTBiMDIxNWY3MGRhNjQ5ZTk0NDQ3N2Y0NDM3MGNhNjk1MiJ9fX0="
 
+  DROWNED:
+    enabled: true
+    drop-chance: 100
+    xp-value: 22
+    sell-price: 15
+    display-name: "&fDrowned Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzNmN2NjZjYxZGJjM2Y5ZmU5YTYzMzNjZGUwYzBlMTQzOTllYjJlZWE3MWQzNGIxYjU2NGIzNjI3NzRiIn19fQ=="
+
+  FOX:
+    enabled: true
+    drop-chance: 100
+    xp-value: 20
+    sell-price: 14
+    display-name: "&fFox Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDg5NTRhNDJlNjllMTgyZDI1ZTk2MTdiN2UzYjRlOWU4MTk4NDkwYWRiODFlMGIyNjRiYzM4NGM1N2UyNjE4NyJ9fX0="
+
+  BEE:
+    enabled: true
+    drop-chance: 100
+    xp-value: 30
+    sell-price: 22
+    display-name: "&fBee Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTlhYzE2ZjI5NmI0NjFkMDVlYTc4NTQyNGI1YjYyMjI2NmQzNTVhMGQ3OGU5YjA0NDg3NjRmMTIyMmUwZTAifX19"
+
+  GOAT:
+    enabled: true
+    drop-chance: 100
+    xp-value: 25
+    sell-price: 18
+    display-name: "&fGoat Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDU3YTBhYzFlNjhkNGI2MTI4OGQyYjMxMjhiZjE0NDUyNjU4ZmYzNGE0YjkxNTZlNjViZDE1MjZmNDdhNiJ9fX0="
+
   # ============================================
   # ADVANCED TIER (Levels 6-10)
   # Target: 1-2 hours per level
@@ -125,6 +157,70 @@ heads:
     sell-price: 70
     display-name: "&aCave Spider Head"
     texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE2NDVkZmQ3N2QwOTkyMzEwN2IzNDk2ZTk0ZWViNWMzMDMyOWY5N2VmYzk2ZWQ3NmUyMjZlOTgyMjQifX19"
+
+  PHANTOM:
+    enabled: true
+    drop-chance: 100
+    xp-value: 60
+    sell-price: 80
+    display-name: "&aPhantom Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzQ2ODMwZGE1ZjI4NDFjNzY3YWY1NjMxNTlhOTBhNGY0ZTBlOGUxYTIwOTM1ZjJlNjQ1MTQ4ODM1ZGVmNjkzMCJ9fX0="
+
+  PILLAGER:
+    enabled: true
+    drop-chance: 100
+    xp-value: 55
+    sell-price: 70
+    display-name: "&aPillager Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGFlZTZiYjM3Y2JmYzhiMTJmZTNlNmY2NTc0ZTFmYTI4MGRjM2JlMTI1ZmI5NDRmNjM5ZmEzOGRiYjc5ZTVlIn19fQ=="
+
+  AXOLOTL:
+    enabled: true
+    drop-chance: 100
+    xp-value: 50
+    sell-price: 65
+    display-name: "&aAxolotl Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU4MDliZDBhYjBmOTliNTAyNWJkYmI0MDcwOTkyZmU0ZjRmN2UwNGIwY2RkOGI1YmI0NjJhMDVjNmI2NjY0NyJ9fX0="
+
+  PANDA:
+    enabled: true
+    drop-chance: 100
+    xp-value: 55
+    sell-price: 75
+    display-name: "&aPanda Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjY0NjMxNDYzODFlYjM3ZmIyNjk1OGVjMjMzNmIwOTAzNzY2NTM5YjlhMjU1NjE1YzFhNmY1NDFmMzJiIn19fQ=="
+
+  POLAR_BEAR:
+    enabled: true
+    drop-chance: 100
+    xp-value: 45
+    sell-price: 55
+    display-name: "&aPolar Bear Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDQ2ZDIzZjA0ODQ2MzY5ZmEyYTM3MDJjMTBmNzU5MTAxYWY3YmZlODQxOWFmMTRmOTdiOTNjOTQ2M2UiLCJtZXRhZGF0YSI6eyJtb2RlbCI6InNsaW0ifX19fQ=="
+
+  HOGLIN:
+    enabled: true
+    drop-chance: 100
+    xp-value: 50
+    sell-price: 65
+    display-name: "&aHoglin Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWJiOWJjMGYwMWRiZDc2MmEwOGQ5MTVmYTkzMzJlYzdiNGQ4YmI0MTFkYmM3OGRiMTRiNjExNWNiNmQwN2VjIn19fQ=="
+
+  PIGLIN:
+    enabled: true
+    drop-chance: 100
+    xp-value: 55
+    sell-price: 70
+    display-name: "&aPiglin Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzE2MDA5OWIzNjJlN2E4MDBlNjVmMzk2ZDRlZmVjNTQzODc1NTU0ZmQ0NmU1MDMyOWZjZGQyOTQzYjBjZWI3MiJ9fX0="
+
+  ENDERMITE:
+    enabled: true
+    drop-chance: 100
+    xp-value: 45
+    sell-price: 55
+    display-name: "&aEndermite Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWJjN2I5ZDM2ZmI5MmI2YmYyOTJiZTczZDMyYzZjNWIwZWNjMjViNDQzMjNhNTQxZmFlMWYxZTY3ZTM5M2EzZSJ9fX0="
 
   # ============================================
   # EXTREME TIER (Levels 11-14)
@@ -188,11 +284,51 @@ heads:
     display-name: "&bGhast Head"
     texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI2YTcyMTM4ZDY5ZmJiZDJmZWEzZmEyNTFjYWJkODcxNTJlNGYxYzk3ZTVmOTg2YmY2ODU1NzFkYjNjYzAifX19"
 
+  PIGLIN_BRUTE:
+    enabled: true
+    drop-chance: 100
+    xp-value: 130
+    sell-price: 250
+    display-name: "&bPiglin Brute Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UzMDBlOTAyNzM0OWU0YTYwNjU0ZTJiNTg2MDNiNTYzMGYxZDVkMWQyMGQxNGI1NWM3ZGU1MjlkYTY1ZDdlMCJ9fX0="
+
+  STRIDER:
+    enabled: true
+    drop-chance: 100
+    xp-value: 90
+    sell-price: 140
+    display-name: "&bStrider Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMThhOWFkZjc4MGVjN2RkNDYyNWM5YzA3NzkwNTJlNmExMGI0NTlmZWY0NmRiNDViNjdmMTQ3NTQxMjhiZmEifX19"
+
+  SHULKER:
+    enabled: true
+    drop-chance: 100
+    xp-value: 160
+    sell-price: 350
+    display-name: "&bShulker Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWU3MDBjMjBmY2I1MTgwNGVhNTA2MTNkNzRmMTVhNjFiYjc2N2Y2NjE2M2RjNjVkZTk0MDdiOGI4ZDIxIn19fQ=="
+
+  RAVAGER:
+    enabled: true
+    drop-chance: 100
+    xp-value: 200
+    sell-price: 500
+    display-name: "&bRavager Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2I2MjVlZDQ4YTVlNTQ4NTcyOGI1OTk3ZGYxYTMxZTQ3YTJmOTgyNjNhNDZjMjRlMDcxNmI1ZDEwNjQzZGIifX19"
+
   # ============================================
   # DIVINE TIER (Special/Boss drops)
   # Trophy items - flex value, massive rewards
   # ============================================
   
+  WARDEN:
+    enabled: true
+    drop-chance: 100
+    xp-value: 800
+    sell-price: 5000
+    display-name: "&6Warden Head"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGUzYWJhZDU4YjZhNjMwZjM3NjVkMzM2NzQ5MTU4NTlhYTgzMTk5Y2Y4MDU0OWU4ZWE0MWQ0NjA2YjYzOGI2In19fQ=="
+
   IRON_GOLEM:
     enabled: true
     drop-chance: 100

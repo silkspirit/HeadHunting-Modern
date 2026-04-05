@@ -260,12 +260,12 @@ missions:
     requirements:
       reach_max_level:
         type: REACH_LEVEL
-        amount: 14
-        description: "&7Reach HeadHunting level 14 (MAX)"
+        amount: 18
+        description: "&7Reach HeadHunting level 18"
       own_masks:
         type: OWN_MASK_COUNT
-        amount: 12
-        description: "&7Own 12 different masks"
+        amount: 15
+        description: "&7Own 15 different masks"
       deposit_massive:
         type: DEPOSIT_HEADS
         amount: 5000
@@ -279,6 +279,66 @@ missions:
       - "title {player} title {\"text\":\"§5§l✦ ENDER DRAGON ✦\",\"bold\":true}"
       - "title {player} subtitle {\"text\":\"§dYou are the Master\"}"
 
+  # ============================================
+  # 9. BEE - "The Pollinator" (HARD)
+  # ============================================
+  # Theme: Animal husbandry and farming mastery
+  bee_mission:
+    display-name: "&e&l✦ The Pollinator ✦"
+    description: "&7Become one with nature and tend to the land."
+    unlocks-mask: bee
+    icon-material: PLAYER_HEAD
+    icon-data: 3
+    icon-skull: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTlhYzE2ZjI5NmI0NjFkMDVlYTc4NTQyNGI1YjYyMjI2NmQzNTVhMGQ3OGU5YjA0NDg3NjRmMTIyMmUwZTAifX19"
+    icon-glow: true
+    difficulty: 6
+    requirements:
+      breed_animals:
+        type: BREED_ANIMALS
+        amount: 200
+        description: "&7Breed 200 animals"
+      harvest_crops:
+        type: HARVEST_CROPS
+        amount: 1000
+        description: "&7Harvest 1,000 crops"
+      tame_animals:
+        type: TAME_ANIMALS
+        amount: 20
+        description: "&7Tame 20 animals"
+    reward-commands:
+      - "broadcast &6&l✦ &e{player} &7has become &e&lThe Pollinator&7!"
+
+  # ============================================
+  # 10. AXOLOTL - "Deep Sea Diver" (HARD)
+  # ============================================
+  # Theme: Ocean mastery - fishing, underwater combat, prismarine
+  axolotl_mission:
+    display-name: "&d&l✦ Deep Sea Diver ✦"
+    description: "&7Master the depths of the ocean."
+    unlocks-mask: axolotl
+    icon-material: PLAYER_HEAD
+    icon-data: 3
+    icon-skull: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU4MDliZDBhYjBmOTliNTAyNWJkYmI0MDcwOTkyZmU0ZjRmN2UwNGIwY2RkOGI1YmI0NjJhMDVjNmI2NjY0NyJ9fX0="
+    icon-glow: true
+    difficulty: 7
+    requirements:
+      fish_catches:
+        type: FISH_CATCHES
+        amount: 500
+        description: "&7Catch 500 fish"
+      kill_drowned:
+        type: KILL_SPECIFIC_MOB
+        amount: 200
+        target: DROWNED
+        description: "&7Kill 200 drowned"
+      mine_prismarine:
+        type: MINE_SPECIFIC_BLOCK
+        amount: 50
+        target: PRISMARINE
+        description: "&7Mine 50 prismarine blocks"
+    reward-commands:
+      - "broadcast &6&l✦ &e{player} &7has become the &d&lDeep Sea Diver&7!"
+
 # ============================================
 # MISSION BALANCE NOTES
 # ============================================
@@ -288,7 +348,9 @@ missions:
 # 3. Guardian (Ocean Explorer) - 2-3 hours
 # 4. Skeleton Horse (The Miner) - 4-8 hours
 # 5. Undead Horse (Nether Voyager) - 6-10 hours
-# 6. Elder Guardian (Master Trader) - 8-12 hours
+# 6. Bee (The Pollinator) - 6-10 hours
+# 7. Axolotl (Deep Sea Diver) - 8-12 hours
+# 7. Elder Guardian (Master Trader) - 8-12 hours
 # 7. Wither (The Slayer) - 10-15 hours
 # 8. Ender Dragon (Master) - 15-25 hours
 # ============================================

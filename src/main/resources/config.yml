@@ -29,6 +29,7 @@ head-drops:
     worlds:
       - world
       - world_nether
+      - world_the_end
   
   # Should stacked mobs drop multiple heads?
   stacked-mobs:
@@ -53,9 +54,12 @@ levels:
     10:
       - "give {player} diamond 10"
       - "broadcast &9{player} &bhas reached Level 10!"
-    14:
+    15:
       - "give {player} diamond 20"
-      - "broadcast &9&l{player} &b&lhas reached MAX LEVEL!"
+      - "broadcast &c&l✦ &9{player} &bhas reached &cMaster Tier &b(Level 15)!"
+    20:
+      - "give {player} netherite_ingot 8"
+      - "broadcast &6&l✦ &9&l{player} &b&lhas reached &6MAX LEVEL 20&b&l!"
 
 # Mask Settings
 masks:
@@ -118,16 +122,6 @@ integrations:
   # PlaceholderAPI
   placeholderapi:
     enabled: true
-  
-  # FactionsKore/FactionsUUID - for warzone detection
-  factions:
-    enabled: true
-    # Bonus head drop rate in warzone (multiplier)
-    warzone-drop-multiplier: 1.5
-    # Darkzone world name (FKore custom world - suppress vanilla mob drops here)
-    darkzone-world: "darkzone"
-    # Suppress vanilla drops (rotten flesh, bones, etc.) for custom-named mobs in darkzone-world
-    suppress-vanilla-drops: true
   
   # LuckPerms - for permission management
   luckperms:

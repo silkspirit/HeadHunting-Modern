@@ -60,11 +60,6 @@ public class MobDeathListener implements Listener {
         double baseChance = headConfig.getDropChance();
         double multiplier = plugin.getConfigManager().getDropRateMultiplier();
         
-        // Apply warzone multiplier if applicable
-        if (isInWarzone(entity)) {
-            multiplier *= plugin.getConfigManager().getWarzoneDropMultiplier();
-        }
-        
         double finalChance = baseChance * multiplier;
         
         // Check for stacked mobs
@@ -139,20 +134,6 @@ public class MobDeathListener implements Listener {
      */
     private String resolveHeadKey(LivingEntity entity, EntityType type) {
         return type.name();
-    }
-    
-    /**
-     * Check if entity is in warzone (Factions integration)
-     */
-    private boolean isInWarzone(LivingEntity entity) {
-        try {
-            if (plugin.getServer().getPluginManager().getPlugin("Factions") != null) {
-                // Would need proper API integration
-            }
-            return false;
-        } catch (Exception e) {
-            return false;
-        }
     }
     
     /**

@@ -37,9 +37,10 @@ public class MissionsGUI implements InventoryHolder {
     
     private static final int GUI_SIZE = 54;
     
-    // Divine mission slots - 2 rows of 4 for 8 missions
+    // Divine mission slots - up to 3 rows for 10+ missions
     private static final int[] DIVINE_MISSION_SLOTS_ROW1 = {10, 12, 14, 16};  // Row 2
     private static final int[] DIVINE_MISSION_SLOTS_ROW2 = {19, 21, 23, 25};  // Row 3
+    private static final int[] DIVINE_MISSION_SLOTS_ROW3 = {28, 30};          // Row 4 (overflow)
     private static final int[] DAILY_MISSION_SLOTS = {37, 39, 41, 43};        // Row 5
     
     public MissionsGUI(HeadHunting plugin, Player player) {
@@ -110,19 +111,21 @@ public class MissionsGUI implements InventoryHolder {
         List<MissionConfig> missionList = new ArrayList<>(missions.values());
         missionList.sort(Comparator.comparingInt(MissionConfig::getDifficulty));
         
-        // Place missions in slots (up to 8)
-        int totalMissions = Math.min(8, missionList.size());
-        
+        // Place missions in slots (up to 10)
+        int totalMissions = Math.min(10, missionList.size());
+
         for (int i = 0; i < totalMissions; i++) {
             MissionConfig mission = missionList.get(i);
             int slot;
-            
+
             if (i < 4) {
                 slot = DIVINE_MISSION_SLOTS_ROW1[i];
-            } else {
+            } else if (i < 8) {
                 slot = DIVINE_MISSION_SLOTS_ROW2[i - 4];
+            } else {
+                slot = DIVINE_MISSION_SLOTS_ROW3[i - 8];
             }
-            
+
             ItemStack missionItem = createMissionItem(mission, data);
             inventory.setItem(slot, missionItem);
         }

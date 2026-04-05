@@ -120,12 +120,6 @@ public class CollectorListener implements Listener {
             return;
         }
 
-        // Factions: only allow faction members in their own territory
-        if (!checkFactionsAccess(player, block.getLocation())) {
-            MessageUtil.send(player, "&cYou can only access collectors in your faction's territory.");
-            return;
-        }
-
         new CollectorGUI(plugin, player, cd).open();
     }
 
@@ -187,50 +181,4 @@ public class CollectorListener implements Listener {
         return hasHeadKey;
     }
 
-    /**
-     * FactionsUUID access check: if Factions is loaded, the player must be a member
-     * of the faction that claims the block's territory (or the land is unclaimed).
-     * Uses pure reflection so Factions is not required at compile time.
-     */
-    private boolean checkFactionsAccess(Player player, Location loc) {
-        try {
-            // Resolve Board
-            Class<?> boardClass = Class.forName("com.massivecraft.factions.Board");
-            Object boardInstance = boardClass.getMethod("getInstance").invoke(null);
-
-            // Build FLocation from Location
-            Class<?> flocationClass = Class.forName("com.massivecraft.factions.FLocation");
-            Object flocation = flocationClass.getConstructor(Location.class).newInstance(loc);
-
-            // Get the faction at that location
-            Object landFaction = boardClass.getMethod("getFactionAt", flocationClass)
-                    .invoke(boardInstance, flocation);
-
-            if (landFaction == null) return true;
-
-            // Check if wilderness
-            boolean isWilderness = (boolean) landFaction.getClass()
-                    .getMethod("isWilderness").invoke(landFaction);
-            if (isWilderness) return true;
-
-            // Get the player's faction
-            Class<?> fplayersClass = Class.forName("com.massivecraft.factions.FPlayers");
-            Object fplayersInstance = fplayersClass.getMethod("getInstance").invoke(null);
-            Object fp = fplayersClass.getMethod("getByPlayer", Player.class)
-                    .invoke(fplayersInstance, player);
-            if (fp == null) return false;
-
-            Object playerFaction = fp.getClass().getMethod("getFaction").invoke(fp);
-
-            // Allow if same faction owns the land
-            return landFaction.equals(playerFaction);
-
-        } catch (ClassNotFoundException | NoClassDefFoundError e) {
-            // Factions not installed — allow all
-            return true;
-        } catch (Exception e) {
-            // Unexpected error — default to allow
-            return true;
-        }
-    }
 }
